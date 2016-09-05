@@ -1,4 +1,5 @@
 # Texchange Web Service Client Section
+[私たちのサービス](http://texchg.com){:target="_blank"}
 <p><a href="http://texchg.com" target="_blank">私たちのサービス</a></p>
 のデザインを担う部分です。
 
