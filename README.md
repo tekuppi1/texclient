@@ -4,7 +4,6 @@
 
 <br />
 <br />
-<br />
 
 ## _About us / テクスチェンジ_
 We are Texchange. We're aiming to help university students' lives 
