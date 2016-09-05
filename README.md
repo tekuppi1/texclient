@@ -22,10 +22,10 @@ they are prevented from expensive textbook costs.
 this part should be same as one on Server
 
 ### Installation
-以下の手順は、システムの総体をインストールするためのものです。
+以下の手順は、システムの総体をインストールするためのものです。<br />
 1. Bootstrap とかの導入方法をずらっと
 みたいな
 
-Take following steps to install our whole system on your computers.
+Take following steps to install our whole system on your computers. <br />
 1. the installations like Bootstrap and so on
 blablabla
