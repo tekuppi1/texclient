@@ -3,7 +3,7 @@
 のデザインを担う部分です。
 
 Design section of 
-<a href="http://texchg.com" target="_blank">私たちのサービス</a>.
+<a href="http://texchg.com" target="_blank">our service</a>.
 
 ### About us
 私たちはテクスチェンジ。テクスチェンジは、大学生に無料で中古教科書を提供し
