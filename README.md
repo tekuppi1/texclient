@@ -3,7 +3,7 @@
 のデザインを担う部分です。
 <br /><br /><br />
 
-## _About us / テクスチェンジとは_
+## _About us / テクスチェンジ_
 We are Texchange. We're aiming to help university students' lives 
 by giving them secoundhand textbook from seniors so that 
 they are prevented from expensive textbook costs.
