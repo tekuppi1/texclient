@@ -2,7 +2,9 @@
 <a href="http://texchg.com" target="_blank">私たちのサービス</a>
 のデザインを担う部分です。
 
-
+<br />
+<br />
+<br />
 
 ## _About us / テクスチェンジ_
 We are Texchange. We're aiming to help university students' lives 
@@ -16,7 +18,6 @@ they are prevented from expensive textbook costs.
 学生の暮らしを豊かにすることを目標としています。
 
 <br />
-<br />
 
 ## _Main features / 主な機能_
 * Search books
@@ -27,7 +28,6 @@ they are prevented from expensive textbook costs.
 * 在庫の検索
 * 本の予約
 
-<br />
 <br />
 
 ## _Installation / インストール_
