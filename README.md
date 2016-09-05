@@ -1,6 +1,7 @@
 # _Texchange Web Service Client Section_
 <a href="http://texchg.com" target="_blank">私たちのサービス</a>
 のデザインを担う部分です。
+<br /><br /><br />
 
 ## _About us / テクスチェンジとは_
 We are Texchange. We're aiming to help university students' lives 
