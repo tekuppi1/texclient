@@ -1,5 +1,5 @@
 # Texchange Web Service Client Section
-<a href="http://texchg.com" target="_blank">私たちのサービス</a>
+<p><a href="http://texchg.com" target="_blank">私たちのサービス</a></p>
 のデザインを担う部分です。
 
 Design section of 
