@@ -1,17 +1,31 @@
 # Texchange Web Service Client Section
-サービスのデザインを担う部分です。
+[私たちのサービス] (http://texchg.com)
+のデザインを担う部分です。
 
-Design section of our web service.
+Design section of 
+[our web service] (http://texchg.com).
 
 ### About us
-私たちはテクスチェンジ。テクスチェンジは、大学生に無料で中古教科書を提供し高額な教科書代の負担から学生を開放することで、学生の暮らしを豊かにすることを目標としています。
+私たちはテクスチェンジ。テクスチェンジは、大学生に無料で中古教科書を提供し
+高額な教科書代の負担から学生を開放することで、
+学生の暮らしを豊かにすることを目標としています。
 
-We are Texchange. We're aiming to help university students' lives by giving them secoundhand textbook from seniors so that they are prevented from expensive textbook costs.
+We are Texchange. We're aiming to help university students' lives 
+by giving them secoundhand textbook from seniors so that 
+they are prevented from expensive textbook costs.
 
 ### Main features
+* 本を予約できるよ、みたいな
+サーバー側と同じ
 
-### Dependencies
-未定
+* Like "You can reserve books!"
+this part should be same as one on Server
 
-Undefined
+### Installation
+以下の手順は、システムの総体をインストールするためのものです。
+1. Bootstrap とかの導入方法をずらっと
+みたいな
 
+Take following steps to install our whole system on your computers.
+1. the installations like Bootstrap and so on
+blablabla
