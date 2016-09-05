@@ -44,6 +44,6 @@ Take following steps to install our whole system on your computers.
 
 1. Bootstrap のインストール
 2. Node.js のインストール
-3. 3. Gulp.js のインストール
+3. Gulp.js のインストール
 4. PHP のバージョンを確認する
 5. データベースの構築
