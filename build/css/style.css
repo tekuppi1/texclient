@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+body {
+  font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif; }
