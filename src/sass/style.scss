@@ -1,7 +1,31 @@
+@import 'node_modules/modularscale-sass/stylesheets/modular-scale';
+@import "swiper.custom";
+@import "modal.custom";
+@import "loading.custom";  
+
+$ms-base: 1em;
+$ms-ratio: $golden;
+
+/**
+ * 【導入ライブラリ】
+ *
+ * [modular-scale]
+ *  - ma(n) で黄金比に変換されるよ。
+ *  - ベースはma(0)
+ */
+
+body{
+     font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+}
+
 .header {
   display: flex;
 }
 
-body{
-     font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+#main-content{
+  margin: ms(0);
+}
+
+.nav-wrapper{
+  padding: 0 ms(0);
 }

@@ -22,6 +22,7 @@
     "gulp-webserver": "^0.9.1",
     "imagemin-pngquant": "^5.0.0",
     "jquery": "^3.1.0",
+    "modularscale-sass": "^2.1.1",
     "postcss-cssnext": "^2.7.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -34,7 +35,13 @@
     "gulp-sass": "^2.3.2",
     "gulp-webserver": "^0.9.1",
     "imagemin-pngquant": "^5.0.0",
-    "postcss-cssnext": "^2.7.0"
+    "material-icons": "^0.1.0",
+    "materialize-css": "^0.97.7",
+    "modular-scale": "^4.4.1",
+    "modularscale-sass": "^2.1.1",
+    "postcss-cssnext": "^2.7.0",
+    "superagent": "^2.2.0",
+    "swiper": "^3.3.1"
   },
   "description": ""
 }
