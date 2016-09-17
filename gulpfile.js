@@ -24,15 +24,44 @@ var webserver = require('gulp-webserver'); // ローカルサーバ起動
 var imagemin = require('gulp-imagemin'); // 画像圧縮
 var pngquant = require('imagemin-pngquant'); // 画像圧縮
 var plumber = require('gulp-plumber'); // コンパイルエラーが出てもwatchを止めない
+var mock = require('easymock'); // モックサーバー
+var eslint = require('gulp-eslint'); //eslint処理
 
-//ローカルサーバー
+//モックサーバー（テスト用）
+gulp.task('easymock', function () {
+    var MockServer = mock.MockServer;
+    var options = {
+        keepalive: true,
+        port: 3000,
+        path: './mock',
+    };
+    var server = new MockServer(options);
+    server.start();
+});
+
+//ローカルサーバー(モック連動)
+gulp.task('mockserver',['easymock'],function(){
+  gulp.src('./') // ルート・ディレクトリ
+    .pipe(webserver({
+      livereload: false, // trueにするとmockがリダイレクトしてしまうので注意！
+      directoryListing: false,
+      open: true,
+      port: 8000,
+      proxies: [{
+        source: '/mock',
+        target: 'http://localhost:3000'
+      }]
+    }));
+});
+
+//ローカルサーバー(モック非連動)
 gulp.task('webserver', function(){
   gulp.src('./') // ルート・ディレクトリ
     .pipe(webserver({
       livereload: true,
       directoryListing: false,
       open: true,
-      port: 8000
+      port: 8000,
     }));
 });
 
@@ -53,6 +82,12 @@ gulp.task('js', function(){
   .pipe(gulp.dest(path.jsBuildPath + '/'));
 });
 
+gulp.task('eslint', function(){
+  return gulp.src([path.jsPath + '**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
 // Sassをコンパイルし、ベンダープレフィックスを付与
 gulp.task('scss', function() {
@@ -80,10 +115,13 @@ gulp.task('imagemin', function(){
 
 // ファイル変更監視
 gulp.task('watch', function() {
-  gulp.watch(path.htmlPath + '/*.html', function(event){gulp.run('html')});
-  gulp.watch(path.sassPath + '/*.scss', function(event){gulp.run('scss')});
-  gulp.watch(path.jsPath + '**/*.js', function(event){gulp.run('js')});
+  gulp.watch(path.htmlPath + '/**/*.html', ['html']);
+  gulp.watch(path.sassPath + '/**/*.scss', ['scss']);
+  gulp.watch(path.jsPath + '/**/*.js',['js']);
 });
 
 // タスク実行
-gulp.task('default', ['webserver','html','js','scss','watch']); // デフォルト実行
+gulp.task('default', ['webserver','html','js','scss','eslint','watch']); // デフォルト実行
+
+// タスク実行（mockテスト）
+gulp.task('mock', ['mockserver','html','js','scss','eslint','watch']); // デフォルト実行

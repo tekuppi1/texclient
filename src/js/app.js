@@ -1,52 +1,55 @@
-//include
-const api = require('./components/api.js');
+//----------------------------------------------------------------------
+// INCLUDE
+//----------------------------------------------------------------------
+setting = require('./constant/setting.js');
+api = require('./util/api.js');
 
+
+//----------------------------------------------------------------------
+// INITIALIZE
+//----------------------------------------------------------------------
 window.onload = () => {
   console.log('Page Loaded');
   $('.modal-trigger').leanModal();
 };
 
-let swiper = () => {
-  new Swiper('.swiper-container', {
-    pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    slidesPerView: 1,
-    paginationClickable: true,
-    spaceBetween: 30,
-    grabCursor: true,
-    loop: true,
-  });
-}
 
-let modal_option = {
-  dismissible: true, // Modal can be dismissed by clicking outside of the modal
-  opacity: .6, // Opacity of modal background
-  in_duration: 500, // Transition in duration
-  out_duration: 500, // Transition out duration
-  starting_top: '0%', // Starting top style attribute
-  ending_top: '0%', // Ending top style attribute
-  ready: () => { swiper(); }, // Callback for Modal open
-}
-
+//----------------------------------------------------------------------
+// メインコントローラ
+//----------------------------------------------------------------------
 angular.module('mainApp', [])
   .controller('mainController', ['$scope', ($scope) => {
     console.log("mainController");
     $scope.yourName = "yourName";
+    $scope.apiResp = "API-Responce"
     $scope.showIndicator = true;
-    swiper();
-    api.RequestAPI();
-    $scope.hideIndicator = () => {
-      $scope.showIndicator = false;
-    }
-    //console.log(jQuery(".mainbutton").text("aaaaa"));
+    $scope.hideIndicator = () => { $scope.showIndicator = false; }
+    //swiper();
   }])
-  
+  //--------------------------
+  // メインコンテンツ コントローラ
+  //--------------------------
   .controller('midController',['$scope', ($scope) => {
+
+    // モーダル表示ボタン
     $scope.onLoadModal = () => {
-      console.log("midController");
-      jQuery('.modal-trigger').leanModal(modal_option);
-    }  
+      console.log("onLoadModal");
+      jQuery('.modal-trigger').leanModal(setting.modal_option);
+    }
+
+    // APIレスポンス表示ボタン
+    $scope.onLoadRequestAPI = () => {
+      console.log("onLoadRequestAPI");
+      api.RequestAPI("sample").then(
+        (res) => {
+          console.log("API OK!")
+          $scope.apiResp = res.search_count;
+          $scope.$apply();
+        },(error) => {
+          console.log("API NG!")
+        }
+      );
+    }
   }]);
 
   /***

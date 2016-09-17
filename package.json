@@ -15,6 +15,7 @@
     "bootstrap-material-design": "^0.5.10",
     "browserify": "^13.1.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
@@ -28,6 +29,8 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "easymock": "^0.2.19",
+    "eslint": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-plumber": "^1.1.0",

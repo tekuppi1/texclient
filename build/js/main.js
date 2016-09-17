@@ -1540,15 +1540,68 @@ function request(RequestConstructor, method, url) {
 module.exports = request;
 
 },{}],6:[function(require,module,exports){
-//include
-const api = require('./components/api.js');
+//----------------------------------------------------------------------
+// INCLUDE
+//----------------------------------------------------------------------
+setting = require('./constant/setting.js');
+api = require('./util/api.js');
 
+
+//----------------------------------------------------------------------
+// INITIALIZE
+//----------------------------------------------------------------------
 window.onload = () => {
   console.log('Page Loaded');
   $('.modal-trigger').leanModal();
 };
 
-let swiper = () => {
+
+//----------------------------------------------------------------------
+// メインコントローラ
+//----------------------------------------------------------------------
+angular.module('mainApp', [])
+  .controller('mainController', ['$scope', ($scope) => {
+    console.log("mainController");
+    $scope.yourName = "yourName";
+    $scope.apiResp = "API-Responce"
+    $scope.showIndicator = true;
+    $scope.hideIndicator = () => { $scope.showIndicator = false; }
+    //swiper();
+  }])
+  //--------------------------
+  // メインコンテンツ コントローラ
+  //--------------------------
+  .controller('midController',['$scope', ($scope) => {
+
+    // モーダル表示ボタン
+    $scope.onLoadModal = () => {
+      console.log("onLoadModal");
+      jQuery('.modal-trigger').leanModal(setting.modal_option);
+    }
+
+    // APIレスポンス表示ボタン
+    $scope.onLoadRequestAPI = () => {
+      console.log("onLoadRequestAPI");
+      api.RequestAPI("sample").then(
+        (res) => {
+          console.log("API OK!")
+          $scope.apiResp = res.search_count;
+          $scope.$apply();
+        },(error) => {
+          console.log("API NG!")
+        }
+      );
+    }
+  }]);
+
+  /***
+   * ## メモ ##
+   * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
+   * 
+   */
+},{"./constant/setting.js":7,"./util/api.js":8}],7:[function(require,module,exports){
+//swiperの設定
+exports.swiper = () => {
   new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',
     nextButton: '.swiper-button-next',
@@ -1561,59 +1614,48 @@ let swiper = () => {
   });
 }
 
-let modal_option = {
+// モーダルの設定
+exports.modal_option = {
   dismissible: true, // Modal can be dismissed by clicking outside of the modal
   opacity: .6, // Opacity of modal background
   in_duration: 500, // Transition in duration
   out_duration: 500, // Transition out duration
   starting_top: '0%', // Starting top style attribute
   ending_top: '0%', // Ending top style attribute
-  ready: () => { swiper(); }, // Callback for Modal open
+  ready: () => { setting.swiper(); }, // Callback for Modal open
 }
-
-angular.module('mainApp', [])
-  .controller('mainController', ['$scope', ($scope) => {
-    console.log("mainController");
-    $scope.yourName = "yourName";
-    $scope.showIndicator = true;
-    swiper();
-    api.RequestAPI();
-    $scope.hideIndicator = () => {
-      $scope.showIndicator = false;
-    }
-    //console.log(jQuery(".mainbutton").text("aaaaa"));
-  }])
-  
-  .controller('midController',['$scope', ($scope) => {
-    $scope.onLoadModal = () => {
-      console.log("midController");
-      jQuery('.modal-trigger').leanModal(modal_option);
-    }  
-  }]);
-
-  /***
-   * ## メモ ##
-   * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
-   * 
-   */
-},{"./components/api.js":7}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 //TODO: superAgentの実装
-var request = require('superagent');
+let request = require('superagent');
 
-exports.RequestAPI = () => {
+/**
+ * API通信を行うメソッド
+ * @parms {String} path - root以下のパス
+ * @parms {Object} send - リクエストパラメータ
+ * @parms {func}   callback(res) - コールバック関数
+ * //return {Object} - レスポンスデータ(jsonからObjectに変換) | error時はnull
+ */
+exports.RequestAPI = (path,send = null) => {
   console.log("RequestAPI START");
-  request
-    .post('mock/sample.json')
-    .send({
-      hoge: "fugefuge"})
-    .end(function(err, res){
-      if (res.ok) {
-        console.info(res.body);
-        console.log('success');
-      } else {
-        console.error('error');
-      }
-      console.log('complete');
-    });
+  if( !window.JSON ) return null;
+  return new Promise((resolve, reject) => {
+    request
+      .get('mock/' + path)
+      .send(send)
+      .end(
+        (err, res) => {
+          if (res.ok) {
+            console.log('success');
+            //return res.body;
+            resolve(res.body);
+          } else {
+            console.error('error');
+            reject(err);
+          }
+        }
+      )
+    }
+  );
 }
+
 },{"superagent":2}]},{},[6]);
