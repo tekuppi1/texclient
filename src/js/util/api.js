@@ -1,4 +1,4 @@
-//TODO: superAgentの実装
+// INCLUDE
 let request = require('superagent');
 
 /**
@@ -8,7 +8,7 @@ let request = require('superagent');
  * @parms {func}   callback(res) - コールバック関数
  * //return {Object} - レスポンスデータ(jsonからObjectに変換) | error時はnull
  */
-exports.RequestAPI = (path,send = null) => {
+export default RequestAPI = (path,send = null) => {
   console.log("RequestAPI START");
   if( !window.JSON ) return null;
   return new Promise((resolve, reject) => {

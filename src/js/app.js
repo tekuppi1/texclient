@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 // INCLUDE
 //----------------------------------------------------------------------
-setting = require('./constant/setting.js');
-api = require('./util/api.js');
+angular = require("angular");
+import mainController from './controller/module';
 
 
 //----------------------------------------------------------------------
@@ -13,47 +13,16 @@ window.onload = () => {
   $('.modal-trigger').leanModal();
 };
 
-
 //----------------------------------------------------------------------
-// メインコントローラ
+// コントローラ
 //----------------------------------------------------------------------
-angular.module('mainApp', [])
-  .controller('mainController', ['$scope', ($scope) => {
-    console.log("mainController");
-    $scope.yourName = "yourName";
-    $scope.apiResp = "API-Responce"
-    $scope.showIndicator = true;
-    $scope.hideIndicator = () => { $scope.showIndicator = false; }
-    //swiper();
-  }])
-  //--------------------------
-  // メインコンテンツ コントローラ
-  //--------------------------
-  .controller('midController',['$scope', ($scope) => {
+angular.module('main', [mainController.name]);
 
-    // モーダル表示ボタン
-    $scope.onLoadModal = () => {
-      console.log("onLoadModal");
-      jQuery('.modal-trigger').leanModal(setting.modal_option);
-    }
 
-    // APIレスポンス表示ボタン
-    $scope.onLoadRequestAPI = () => {
-      console.log("onLoadRequestAPI");
-      api.RequestAPI("sample").then(
-        (res) => {
-          console.log("API OK!")
-          $scope.apiResp = res.search_count;
-          $scope.$apply();
-        },(error) => {
-          console.log("API NG!")
-        }
-      );
-    }
-  }]);
-
-  /***
-   * ## メモ ##
-   * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
-   * 
-   */
+/*********************************************************************
+ * ## メモ ##
+ * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
+ * 
+ * 
+ * 
+ ********************************************************************/
