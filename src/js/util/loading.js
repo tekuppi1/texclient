@@ -4,10 +4,13 @@ export default class Loading{
   /**
    * コンストラクタ
    */
-  constructor(){
+  constructor($scope=null){
     console.log("Loading.constructor");
-    //$scope = angular.element('#loading-content').scope();
-    //console.log($scope);
+
+    //スコープのset
+    const element = document.getElementById("content");
+    const scope = angular.element(element).scope();
+    this.$scope = $scope || scope;
   }
 
   /**
@@ -15,6 +18,7 @@ export default class Loading{
    */
   show(){
     console.log("Loading.show");
+    this.$scope.loaderClass = "loadshow";
   }
 
   /**
@@ -22,6 +26,7 @@ export default class Loading{
    */
   hide(){
     console.log("Loading.hide");
+    this.$scope.loaderClass = "loadhide";
   }
 
 }

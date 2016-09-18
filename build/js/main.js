@@ -33430,12 +33430,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = angular.module('mainApp.controller', [_header2.default.name, _main2.default.name, _footer2.default.name]).controller('mainController', ['$scope', function ($scope) {
   console.log("mainController");
   var loading = new _loading2.default();
-
   $scope.yourName = "yourName";
-  $scope.apiResp = "API-Responce";
-  $scope.showIndicator = true;
+  loading.show();
   $scope.hideIndicator = function () {
-    $scope.showIndicator = false;
+    loading.hide();
   };
 }]);
 
@@ -33476,15 +33474,21 @@ var _api = require('../util/api');
 
 var _api2 = _interopRequireDefault(_api);
 
+var _loading = require('../util/loading');
+
+var _loading2 = _interopRequireDefault(_loading);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//ローディングインジケータのクラス
 
 //--------------------------
 // メインコンテンツ コントローラ
 //--------------------------
-// INCLUDE
 exports.default = angular.module('controllers.main', []).controller('midController', ['$scope', function ($scope) {
   console.log("controllers.main");
   var sampleApi = new _api2.default("sample");
+  var loading = new _loading2.default();
 
   // モーダル表示ボタン
   $scope.onLoadModal = function () {
@@ -33495,8 +33499,7 @@ exports.default = angular.module('controllers.main', []).controller('midControll
   // APIレスポンス表示ボタン
   $scope.onLoadRequestAPI = function () {
     console.log("onLoadRequestAPI");
-    console.log(showIndicator);
-    $scope.showIndicator = true;
+    loading.show();
 
     // APIリクエスト(Thenでres|errorを受け取ってください。)
     sampleApi.post().then(function (res) {
@@ -33504,14 +33507,18 @@ exports.default = angular.module('controllers.main', []).controller('midControll
       console.log(res.books);
       $scope.serch_count = res.search_count;
       $scope.books = res.books;
+      loading.hide();
       $scope.$apply(); //画面更新
     }, function (error) {
       console.log("API NG!");
+      loading.hide();
+      $scope.$apply(); //画面更新
     });
   };
-}]);
+}]); //APIのクラス
+// INCLUDE
 
-},{"../constant/modal_setiing":9,"../util/api":15}],15:[function(require,module,exports){
+},{"../constant/modal_setiing":9,"../util/api":15,"../util/loading":16}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33636,11 +33643,16 @@ var Loading = function () {
    * コンストラクタ
    */
   function Loading() {
+    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
     _classCallCheck(this, Loading);
 
     console.log("Loading.constructor");
-    //$scope = angular.element('#loading-content').scope();
-    //console.log($scope);
+
+    //スコープのset
+    var element = document.getElementById("content");
+    var scope = angular.element(element).scope();
+    this.$scope = $scope || scope;
   }
 
   /**
@@ -33652,6 +33664,7 @@ var Loading = function () {
     key: "show",
     value: function show() {
       console.log("Loading.show");
+      this.$scope.loaderClass = "loadshow";
     }
 
     /**
@@ -33662,6 +33675,7 @@ var Loading = function () {
     key: "hide",
     value: function hide() {
       console.log("Loading.hide");
+      this.$scope.loaderClass = "loadhide";
     }
   }]);
 

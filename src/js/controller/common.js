@@ -15,9 +15,7 @@ export default angular.module('mainApp.controller', [
   .controller('mainController', ['$scope', ($scope) => {
     console.log("mainController");
     const loading = new Loading();
-
     $scope.yourName = "yourName";
-    $scope.apiResp = "API-Responce"
-    $scope.showIndicator = true;
-    $scope.hideIndicator = () => { $scope.showIndicator = false; }
+    loading.show();
+    $scope.hideIndicator = ()=>{loading.hide()};
   }]);
