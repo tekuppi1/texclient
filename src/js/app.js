@@ -2,7 +2,7 @@
 // INCLUDE
 //----------------------------------------------------------------------
 angular = require("angular");
-import mainController from './controller/module';
+import mainController from './controller/common';
 
 
 //----------------------------------------------------------------------

@@ -1,32 +1,65 @@
 // INCLUDE
 let request = require('superagent');
 
-/**
- * API通信を行うメソッド
- * @parms {String} path - root以下のパス
- * @parms {Object} send - リクエストパラメータ
- * @parms {func}   callback(res) - コールバック関数
- * //return {Object} - レスポンスデータ(jsonからObjectに変換) | error時はnull
- */
-export default RequestAPI = (path,send = null) => {
-  console.log("RequestAPI START");
-  if( !window.JSON ) return null;
-  return new Promise((resolve, reject) => {
-    request
-      .get('mock/' + path)
-      .send(send)
-      .end(
-        (err, res) => {
-          if (res.ok) {
-            console.log('success');
-            //return res.body;
-            resolve(res.body);
-          } else {
-            console.error('error');
-            reject(err);
-          }
-        }
+// API通信クラス
+export default class ApiClass{
+
+  /**
+   * コンストラクタ
+   * @param {String} path - root以下のパス
+   */
+  constructor(path = null){
+    console.log("ApiClass.constructor START");
+    if(!path) console.log("apiパスが不足しています");
+    this.path = 'mock/' + path; //モックにpath通し
+  }
+
+  /**
+   * POSTを行うメソッド
+   * @param {Object} send - リクエストパラメータ
+   * @return {Object} resolve - レスポンスデータ
+   * @return {Object} reject - エラーオブジェクト
+   */
+  post(send = null){
+    console.log("ApiClass.post START");
+    if( !window.JSON ) return null;
+    return new Promise((resolve, reject) => {
+      request.post(this.path).send(send).end(
+        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}
       )
-    }
-  );
+    });
+  }
+
+  /**
+   * GETを行うメソッド
+   * @param {Object} send - リクエストパラメータ
+   * @return {Object} resolve - レスポンスデータ
+   * @return {Object} reject - エラーオブジェクト
+   */
+  get(send = null){
+    console.log("ApiClass.get START");
+    if( !window.JSON ) return null;
+    return new Promise((resolve, reject) => {
+      request.get(this.path).send(send).end(
+        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}
+      )
+    });
+  }
+
+  /**
+   * resolveのラップ
+   */
+  res(res){
+    console.log('success');
+    return res.body;
+  }
+
+  /**
+   * resolveのラップ
+   */
+  rej(err){
+    console.error('error');
+    return err;
+  }
+
 }

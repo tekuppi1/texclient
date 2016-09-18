@@ -1,5 +1,5 @@
 //swiperの設定
-export function swiper_setiing(){
+export default function (){
   console.log("swiper_setiing");
   new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',

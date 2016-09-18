@@ -4,5 +4,26 @@
   <h2>Hello {{yourName}}!</h2>
   <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
   <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI()" >Request API</div>
-  <div id="api-resp">{{apiResp}}<div>
+
+  <div>
+    <div id="serch_count">検索数： {{serch_count}}<div>
+    <table class="bordered">
+      <thead>
+        <tr>
+          <th data-field="books_title">タイトル</th>
+          <th data-field="books_author">著者</th>
+          <th data-field="books_price">価格</th>
+          <th data-field="books_url">imgURL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="book in books">
+          <td>{{book.book_title}}</td>
+          <td>{{book.book_author}}</td>
+          <td>{{book.book_price}}</td>
+          <td>{{book.book_img}}</td>
+        <tr>
+      </tbody>
+    </table>
+  </div>
 </div>

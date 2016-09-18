@@ -1,8 +1,19 @@
+//----------------------------------------------------------------------
+// External stylesheet
+//----------------------------------------------------------------------
 @import 'node_modules/modularscale-sass/stylesheets/modular-scale';
-@import "swiper.custom";
-@import "modal.custom";
-@import "loading.custom";  
 
+//----------------------------------------------------------------------
+// internal stylesheet
+//----------------------------------------------------------------------
+@import "custom/swiper.custom";
+@import "custom/modal.custom";
+@import "custom/loading.custom";  
+
+
+//----------------------------------------------------------------------
+// custom stylesheet
+//----------------------------------------------------------------------
 $ms-base: 1em;
 $ms-ratio: $golden;
 
