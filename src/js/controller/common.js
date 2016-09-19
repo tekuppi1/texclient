@@ -2,7 +2,7 @@
 import header from './header.controller';
 import main from './main.controller';
 import footer from './footer.controller';
-import Loading from '../util/loading';
+import Loading from '../components/loading';
 
 //----------------------------------------------------------------------
 // グローバル コントローラ

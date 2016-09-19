@@ -68,7 +68,7 @@ gulp.task('webserver', function(){
 
 // htmlをコンパイル
 gulp.task('html', function(){
-  gulp.src(path.htmlPath + '/*.html')
+  gulp.src(path.htmlPath + '/**/*.html')
   .pipe(gulp.dest(path.htmlBuildPath + '/'));
 });
 
@@ -85,7 +85,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('eslint', function(){
-  return gulp.src([path.jsPath + '**/*.js'])
+  return gulp.src([path.jsPath + '/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());

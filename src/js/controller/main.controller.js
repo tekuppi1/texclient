@@ -1,7 +1,8 @@
 // INCLUDE
-import modal_setting from '../constant/modal_setiing';
 import ApiClass from '../util/api'; //APIのクラス
-import Loading from '../util/loading'; //ローディングインジケータのクラス
+import Loading from '../components/loading'; //ローディングインジケータのクラス
+import Book from '../components/book'; //ローディングインジケータのクラス
+import Modal from '../components/modal';
 
 //--------------------------
 // メインコンテンツ コントローラ
@@ -11,11 +12,12 @@ export default angular.module('controllers.main', [])
     console.log("controllers.main");
     const sampleApi = new ApiClass("sample");
     const loading = new Loading();
+    const modal = new Modal();
 
     // モーダル表示ボタン
     $scope.onLoadModal = () => {
       console.log("onLoadModal");
-      jQuery('.modal-trigger').leanModal(modal_setting());
+      jQuery('.modal-trigger').leanModal(modal.setting());
     }
 
     // APIレスポンス表示ボタン
@@ -38,6 +40,20 @@ export default angular.module('controllers.main', [])
           $scope.$apply(); //画面更新
         }
       );
+    }
+
+    // 予約のモーダル表示
+    $scope.pushReservation = (obj) => {
+      console.log("pushReservation");
+      console.log(obj);
+      const book = new Book({
+        title:  obj.book_title,
+        author: obj.book_author,
+        price:  obj.book_price,
+        img:    obj.book_img,
+      });
+      modal.set({book});
+      $('#modal1').openModal();
     }
 
   }]);

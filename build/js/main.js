@@ -33348,36 +33348,232 @@ angular.module('main', [_common2.default.name]);
  * 
  ********************************************************************/
 
-},{"./controller/common":11,"angular":2}],9:[function(require,module,exports){
-'use strict';
+},{"./controller/common":13,"angular":2}],9:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
-exports.default = function () {
-    console.log("modal_setting");
-    return {
-        dismissible: true, // Modal can be dismissed by clicking outside of the modal
-        opacity: .6, // Opacity of modal background
-        in_duration: 500, // Transition in duration
-        out_duration: 500, // Transition out duration
-        starting_top: '0%', // Starting top style attribute
-        ending_top: '0%', // Ending top style attribute
-        ready: function ready() {
-            // Callback for Modal open
-            (0, _swiper_setiing2.default)();
-        }
-    };
-};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _swiper_setiing = require('./swiper_setiing');
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * @class 本のクラスです。 
+ * @param {string} title - タイトル
+ * @param {string} author - 著者
+ * @param {string} price - 値段
+ * @param {string} img - 画像URL
+ */
+var Book = function () {
+
+  /**
+   * @constructor
+   * @param {Object} data - 本のオブジェクト
+   */
+  function Book() {
+    var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    _classCallCheck(this, Book);
+
+    if (!data) console.log("Book read error");
+    this.title = data.title || "";
+    this.author = data.author || "";
+    this.price = data.price || "";
+    this.img = data.img || "";
+  }
+
+  /**
+   * 本のsetter
+   * @param {Object} data - 本のオブジェクト
+   */
+
+
+  _createClass(Book, [{
+    key: "set",
+    value: function set() {
+      var data = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+      if (!data) {
+        console.log("Book set error");
+        return;
+      }
+      this.title = data.title || this.title;
+      this.author = data.author || this.author;
+      this.price = data.price || this.price;
+      this.img = data.img || this.img;
+    }
+
+    /**
+     * 本のgetter
+     * @return {Object} 本のオブジェクト
+     */
+
+  }, {
+    key: "get",
+    value: function get() {
+      return {
+        title: this.title,
+        author: this.author,
+        price: this.price,
+        img: this.img
+      };
+    }
+  }]);
+
+  return Book;
+}();
+
+exports.default = Book;
+
+},{}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * @class ローディングインジケーター クラス
+ * @param {Object} $scope
+ */
+var Loading = function () {
+
+  /**
+   * コンストラクタ
+   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
+   */
+  function Loading() {
+    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+    _classCallCheck(this, Loading);
+
+    console.log("Loading.constructor");
+
+    //スコープのset
+    var element = document.getElementById("content");
+    var scope = angular.element(element).scope();
+    this.$scope = $scope || scope;
+  }
+
+  /**
+   * インジケータを表示
+   */
+
+
+  _createClass(Loading, [{
+    key: "show",
+    value: function show() {
+      console.log("Loading.show");
+      this.$scope.loaderClass = "loadshow";
+    }
+
+    /**
+     * インジケータを非表示
+     */
+
+  }, {
+    key: "hide",
+    value: function hide() {
+      console.log("Loading.hide");
+      this.$scope.loaderClass = "loadhide";
+    }
+  }]);
+
+  return Loading;
+}();
+
+exports.default = Loading;
+
+},{}],11:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //import
+
+
+var _swiper_setiing = require("./swiper_setiing");
 
 var _swiper_setiing2 = _interopRequireDefault(_swiper_setiing);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./swiper_setiing":10}],10:[function(require,module,exports){
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * @class ローディングインジケーター クラス
+ * @param {Object} $scope
+ */
+var Modal = function () {
+
+	/**
+  * コンストラクタ
+  * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
+  */
+	function Modal() {
+		var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+		_classCallCheck(this, Modal);
+
+		console.log("Loading.constructor");
+
+		//スコープのset
+		var element = document.getElementById("content");
+		var scope = angular.element(element).scope();
+		this.$scope = $scope || scope;
+	}
+
+	/**
+  * モーダルの設定
+  */
+
+
+	_createClass(Modal, [{
+		key: "setting",
+		value: function setting() {
+			console.log("modal_setting");
+			return {
+				dismissible: true, // Modal can be dismissed by clicking outside of the modal
+				opacity: .6, // Opacity of modal background
+				in_duration: 500, // Transition in duration
+				out_duration: 500, // Transition out duration
+				starting_top: '0%', // Starting top style attribute
+				ending_top: '0%', // Ending top style attribute
+				ready: function ready() {
+					// Callback for Modal open
+					(0, _swiper_setiing2.default)();
+				}
+			};
+		}
+
+		/**
+   * モーダルのオブジェクトのsetter
+   */
+
+	}, {
+		key: "set",
+		value: function set() {
+			var book = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+			console.log("modal.set");
+			this.$scope.modal_books = book;
+		}
+	}]);
+
+	return Modal;
+}();
+
+exports.default = Modal;
+
+},{"./swiper_setiing":12}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33398,7 +33594,7 @@ exports.default = function () {
   });
 };
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33417,7 +33613,7 @@ var _footer = require('./footer.controller');
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _loading = require('../util/loading');
+var _loading = require('../components/loading');
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -33437,7 +33633,7 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
   };
 }]);
 
-},{"../util/loading":16,"./footer.controller":12,"./header.controller":13,"./main.controller":14}],12:[function(require,module,exports){
+},{"../components/loading":10,"./footer.controller":14,"./header.controller":15,"./main.controller":16}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33448,7 +33644,7 @@ Object.defineProperty(exports, "__esModule", {
 //--------------------------
 exports.default = angular.module('controllers.footer', []).controller('footerController', ['$scope', function ($scope) {}]);
 
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -33459,41 +33655,46 @@ Object.defineProperty(exports, "__esModule", {
 //--------------------------
 exports.default = angular.module('controllers.header', []).controller('headerController', ['$scope', function ($scope) {}]);
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _modal_setiing = require('../constant/modal_setiing');
-
-var _modal_setiing2 = _interopRequireDefault(_modal_setiing);
-
 var _api = require('../util/api');
 
 var _api2 = _interopRequireDefault(_api);
 
-var _loading = require('../util/loading');
+var _loading = require('../components/loading');
 
 var _loading2 = _interopRequireDefault(_loading);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _book = require('../components/book');
 
-//ローディングインジケータのクラス
+var _book2 = _interopRequireDefault(_book);
+
+var _modal = require('../components/modal');
+
+var _modal2 = _interopRequireDefault(_modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //--------------------------
 // メインコンテンツ コントローラ
 //--------------------------
+//ローディングインジケータのクラス
+// INCLUDE
 exports.default = angular.module('controllers.main', []).controller('midController', ['$scope', function ($scope) {
   console.log("controllers.main");
   var sampleApi = new _api2.default("sample");
   var loading = new _loading2.default();
+  var modal = new _modal2.default();
 
   // モーダル表示ボタン
   $scope.onLoadModal = function () {
     console.log("onLoadModal");
-    jQuery('.modal-trigger').leanModal((0, _modal_setiing2.default)());
+    jQuery('.modal-trigger').leanModal(modal.setting());
   };
 
   // APIレスポンス表示ボタン
@@ -33515,10 +33716,24 @@ exports.default = angular.module('controllers.main', []).controller('midControll
       $scope.$apply(); //画面更新
     });
   };
-}]); //APIのクラス
-// INCLUDE
 
-},{"../constant/modal_setiing":9,"../util/api":15,"../util/loading":16}],15:[function(require,module,exports){
+  // 予約のモーダル表示
+  $scope.pushReservation = function (obj) {
+    console.log("pushReservation");
+    console.log(obj);
+    var book = new _book2.default({
+      title: obj.book_title,
+      author: obj.book_author,
+      price: obj.book_price,
+      img: obj.book_img
+    });
+    modal.set({ book: book });
+    $('#modal1').openModal();
+  };
+}]); //ローディングインジケータのクラス
+//APIのクラス
+
+},{"../components/book":9,"../components/loading":10,"../components/modal":11,"../util/api":17}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33532,7 +33747,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 // INCLUDE
 var request = require('superagent');
 
-// API通信クラス
+/**
+ * @class API通信クラス
+ * @param {String} path - root以下のパス
+ */
 
 var ApiClass = function () {
 
@@ -33578,7 +33796,7 @@ var ApiClass = function () {
      * GETを行うメソッド
      * @param {Object} send - リクエストパラメータ
      * @return {Object} resolve - レスポンスデータ
-     * @return {Object} reject - エラーオブジェクト
+     * @throws {Object} reject - エラーオブジェクト
      */
 
   }, {
@@ -33615,7 +33833,7 @@ var ApiClass = function () {
   }, {
     key: "rej",
     value: function rej(err) {
-      console.error('error');
+      console.log('error');
       return err;
     }
   }]);
@@ -33625,63 +33843,4 @@ var ApiClass = function () {
 
 exports.default = ApiClass;
 
-},{"superagent":4}],16:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// ローディングインジケーター クラス
-var Loading = function () {
-
-  /**
-   * コンストラクタ
-   */
-  function Loading() {
-    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
-
-    _classCallCheck(this, Loading);
-
-    console.log("Loading.constructor");
-
-    //スコープのset
-    var element = document.getElementById("content");
-    var scope = angular.element(element).scope();
-    this.$scope = $scope || scope;
-  }
-
-  /**
-   * インジケータを表示
-   */
-
-
-  _createClass(Loading, [{
-    key: "show",
-    value: function show() {
-      console.log("Loading.show");
-      this.$scope.loaderClass = "loadshow";
-    }
-
-    /**
-     * インジケータを非表示
-     */
-
-  }, {
-    key: "hide",
-    value: function hide() {
-      console.log("Loading.hide");
-      this.$scope.loaderClass = "loadhide";
-    }
-  }]);
-
-  return Loading;
-}();
-
-exports.default = Loading;
-
-},{}]},{},[8]);
+},{"superagent":4}]},{},[8]);

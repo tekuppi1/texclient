@@ -14,6 +14,7 @@
           <th data-field="books_author">著者</th>
           <th data-field="books_price">価格</th>
           <th data-field="books_url">imgURL</th>
+          <th data-field="books_button">予約</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,11 @@
           <td>{{book.book_author}}</td>
           <td>{{book.book_price}}</td>
           <td>{{book.book_img}}</td>
+          <td>
+            <a class="modal-trigger waves-effect waves-light btn" ng-click="pushReservation(book)">
+              欲しい<i class="material-icons right">send</i>
+            </a>
+          </td>
         <tr>
       </tbody>
     </table>

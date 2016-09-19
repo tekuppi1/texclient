@@ -29,6 +29,10 @@
 .modal-content h4 {
   font-size: 1.61803em; }
 
+.modal-content p {
+  font-size: 1em;
+  margin: 0.1459em; }
+
 .modal-content .modal-close-button {
   position: absolute;
   right: 1em; }

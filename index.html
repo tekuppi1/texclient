@@ -20,8 +20,8 @@
     <div id="header-content" ng-include="'build/html/header.html'" ng-controller="headerController"></div>
     <div id="main-content" ng-include="'build/html/main.html'" ng-controller="midController" onload="onLoadModal()"></div>
     <div id="footer-content" ng-include="'build/html/footer.html'" ng-controller="footerController"></div>
-    <div id="modal-content" ng-include="'build/html/modal.html'"></div>
-    <div id="loading-content"  ng-class="loaderClass" ng-include="'build/html/loading.html'" ng-click="hideIndicator()"></div>
+    <div id="modal-content" ng-include="'build/html/components/modal.html'"></div>
+    <div id="loading-content"  ng-class="loaderClass" ng-include="'build/html/components/loading.html'" ng-click="hideIndicator()"></div>
   </div>
 </body>
 </html>

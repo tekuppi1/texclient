@@ -1,7 +1,10 @@
 // INCLUDE
 let request = require('superagent');
 
-// API通信クラス
+/**
+ * @class API通信クラス
+ * @param {String} path - root以下のパス
+ */
 export default class ApiClass{
 
   /**
@@ -34,7 +37,7 @@ export default class ApiClass{
    * GETを行うメソッド
    * @param {Object} send - リクエストパラメータ
    * @return {Object} resolve - レスポンスデータ
-   * @return {Object} reject - エラーオブジェクト
+   * @throws {Object} reject - エラーオブジェクト
    */
   get(send = null){
     console.log("ApiClass.get START");
@@ -58,7 +61,7 @@ export default class ApiClass{
    * resolveのラップ
    */
   rej(err){
-    console.error('error');
+    console.log('error');
     return err;
   }
 

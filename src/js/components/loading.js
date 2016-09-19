@@ -1,8 +1,12 @@
-// ローディングインジケーター クラス
+/**
+ * @class ローディングインジケーター クラス
+ * @param {Object} $scope
+ */
 export default class Loading{
 
   /**
    * コンストラクタ
+   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
    */
   constructor($scope=null){
     console.log("Loading.constructor");
