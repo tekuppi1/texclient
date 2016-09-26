@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Load Script -->
+  <script src="lib/js/angular.min.js"></script>
+  <script src="lib/js/jquery.min.js"></script>
+  <script src="lib/js/swiper.min.js"></script>
+  <script src="lib/js/materialize.min.js"></script>
+  <script src="build/js/main.js"></script>
+
+  <!-- Load Stylesheet -->
+  <link rel="stylesheet" href="lib/css/swiper.min.css">
+  <link rel="stylesheet" href="lib/css/materialize.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="build/css/style.css">
+
+</head>
+<body ng-app="main">
+  <div id="content" ng-controller="mainController">
+    <div id="header-content" ng-include="'build/html/header.html'" ng-controller="headerController"></div>
+    <div id="main-content" ng-include="'build/html/main.html'" ng-controller="midController" onload="onLoadModal()"></div>
+    <div id="footer-content" ng-include="'build/html/footer.html'" ng-controller="footerController"></div>
+    <div id="modal-content" ng-include="'build/html/components/modal.html'"></div>
+    <div id="loading-content"  ng-class="loaderClass" ng-include="'build/html/components/loading.html'" ng-click="hideIndicator()"></div>
+  </div>
+</body>
+</html>
