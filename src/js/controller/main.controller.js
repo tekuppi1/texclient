@@ -1,7 +1,7 @@
 // INCLUDE
 import ApiClass from '../util/api'; //APIのクラス
 import Loading from '../components/loading'; //ローディングインジケータのクラス
-import Book from '../components/book'; //ローディングインジケータのクラス
+import Book from '../components/book'; //本情報のクラス
 import Modal from '../components/modal';
 
 //--------------------------
@@ -14,11 +14,13 @@ export default angular.module('controllers.main', [])
     const loading = new Loading();
     const modal = new Modal();
 
-    // モーダル表示ボタン
-    $scope.onLoadModal = () => {
-      console.log("onLoadModal");
-      jQuery('.modal-trigger').leanModal(modal.setting());
+    //メイン初期描画時
+    $scope.onLoadMid = () => {
+      console.log("onLoadMid");
+      //jQuery('.modal-trigger').leanModal(modal.setting());
+      jQuery('ul.tabs').tabs();
     }
+
 
     // APIレスポンス表示ボタン
     $scope.onLoadRequestAPI = () => {

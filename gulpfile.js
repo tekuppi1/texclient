@@ -123,7 +123,7 @@ gulp.task('watch', function() {
 });
 
 // タスク実行
-gulp.task('default', ['webserver','html','js','scss','eslint','watch']); // デフォルト実行
+gulp.task('default', ['webserver','html','js','imagemin','scss','eslint','watch']); // デフォルト実行
 
 // タスク実行（mockテスト）
 gulp.task('mock', ['mockserver','html','js','scss','eslint','watch']); // デフォルト実行
