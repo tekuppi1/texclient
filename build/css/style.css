@@ -250,12 +250,12 @@ nav .container {
   .navbar-fixed-top.fadein {
     -webkit-animation-duration: 0.5s;
             animation-duration: 0.5s;
-    -webkit-animation-name: slidein;
-            animation-name: slidein;
+    -webkit-animation-name: topSlidein;
+            animation-name: topSlidein;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
 
-@-webkit-keyframes slidein {
+@-webkit-keyframes topSlidein {
   0% {
     visibility: visible; }
   1% {
@@ -264,7 +264,7 @@ nav .container {
     opacity: 1;
     visibility: visible; } }
 
-@keyframes slidein {
+@keyframes topSlidein {
   0% {
     visibility: visible; }
   1% {
@@ -275,12 +275,12 @@ nav .container {
   .navbar-fixed-top.fadeout {
     -webkit-animation-duration: 0.2s;
             animation-duration: 0.2s;
-    -webkit-animation-name: slideout;
-            animation-name: slideout;
+    -webkit-animation-name: topSlideout;
+            animation-name: topSlideout;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
 
-@-webkit-keyframes slideout {
+@-webkit-keyframes topSlideout {
   0% {
     opacity: 1;
     visibility: visible; }
@@ -289,7 +289,7 @@ nav .container {
   100% {
     visibility: hidden; } }
 
-@keyframes slideout {
+@keyframes topSlideout {
   0% {
     opacity: 1;
     visibility: visible; }
@@ -311,12 +311,23 @@ nav .container {
   .sideber.fadein {
     -webkit-animation-duration: 0.5s;
             animation-duration: 0.5s;
-    -webkit-animation-name: slidein;
-            animation-name: slidein;
+    -webkit-animation-name: sideSlidein;
+            animation-name: sideSlidein;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
 
-@keyframes slidein {
+@-webkit-keyframes sideSlidein {
+  0% {
+    visibility: visible; }
+  1% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    visibility: visible; } }
+
+@keyframes sideSlidein {
   0% {
     visibility: visible; }
   1% {
@@ -329,12 +340,23 @@ nav .container {
   .sideber.fadeout {
     -webkit-animation-duration: 0.2s;
             animation-duration: 0.2s;
-    -webkit-animation-name: slideout;
-            animation-name: slideout;
+    -webkit-animation-name: sideSlideout;
+            animation-name: sideSlideout;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards; }
 
-@keyframes slideout {
+@-webkit-keyframes sideSlideout {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    visibility: visible; }
+  99% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+  100% {
+    visibility: hidden; } }
+
+@keyframes sideSlideout {
   0% {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);

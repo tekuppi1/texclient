@@ -105,9 +105,9 @@ nav .container {
 	visibility: hidden;
 	&.fadein {
 		animation-duration: 0.5s;
-		animation-name: slidein;
+		animation-name: topSlidein;
 		animation-fill-mode: forwards;
-		@keyframes slidein {
+		@keyframes topSlidein {
 			0% { visibility: visible;}
 			1% { opacity:0;}
 			100% { opacity: 1;visibility: visible;}
@@ -115,9 +115,9 @@ nav .container {
 	}
 	&.fadeout {
 		animation-duration: 0.2s;
-		animation-name: slideout;
+		animation-name: topSlideout;
 		animation-fill-mode: forwards;
-		@keyframes slideout {
+		@keyframes topSlideout {
 			0% { opacity:1;visibility: visible;}
 			99% { opacity: 0;}
 			100% { visibility: hidden;}
@@ -137,9 +137,9 @@ nav .container {
 	transform: translateX(-100%);
 	&.fadein {
 		animation-duration: 0.5s;
-		animation-name: slidein;
+		animation-name: sideSlidein;
 		animation-fill-mode: forwards;
-		@keyframes slidein {
+		@keyframes sideSlidein {
 			0% { visibility: visible;}
 			1% { transform: translateX(-100%);}
 			100% { transform: translateX(0%);visibility: visible;}
@@ -147,9 +147,9 @@ nav .container {
 	}
 	&.fadeout {
 		animation-duration: 0.2s;
-		animation-name: slideout;
+		animation-name: sideSlideout;
 		animation-fill-mode: forwards;
-		@keyframes slideout {
+		@keyframes sideSlideout {
 			0% { transform: translateX(0%);visibility: visible;}
 			99% { transform: translateX(-100%);}
 			100% { visibility: hidden;}
