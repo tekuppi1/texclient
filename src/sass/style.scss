@@ -38,7 +38,7 @@ body {
 ul {
   margin-left:20px;
 }
-#main-content{
+#stab-main-content{
   margin: ms(0);
 }
 .top-menu {
@@ -129,10 +129,11 @@ nav .container {
 .button-collapse {
 	position: absolute;
 	top: 0px;
-	z-index: 3000;
+	z-index: 2500;
 }
 .sideber {
 	width: 250px;
+	z-index: 3000;
 	transform: translateX(-100%);
 	&.fadein {
 		animation-duration: 0.5s;
