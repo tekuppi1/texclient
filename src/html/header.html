@@ -12,17 +12,8 @@
     <li ng-repeat="parent in parents"><a href="{{ '#cat' + parent.id }}">{{ parent.name }}</a></li>
     <li><a href="#about">About us</a></li>
   </ul>
-  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-  
-  <!-- ▼ サイドバー ▼ -->
-  <ul class="side-nav amber darken-2" id="mobile-demo">
-    <li><a><i class="material-icons white-text">close</i></a></li>
-    <li class="divider"></li>
-    <li ng-repeat="parent in parents"><a href="{{ '#cat' + parent.id }}">{{ parent.name }}</a></li>
-    <li><a href="#about">About us</a></li>
-  </ul>
-  <!-- ▲ サイドバー ▲ -->
-
+  <!-- サイドバーボタン -->
+  <a class="button-collapse" ng-click="onSideber(true)"><i class="material-icons">menu</i></a>
 </div></div></nav>
 <!-- ▲ ナビゲーションバー ▲ -->
 
@@ -78,5 +69,13 @@
 </div>
 <!-- ▲ 記事 ▲ -->
 
+<!-- ▼ サイドバー ▼ -->
+<ul class="side-nav amber darken-2 sideber" id="sideber">
+  <li><a ng-click="onSideber(false)"><i class="material-icons white-text">close</i></a></li>
+  <li class="divider"></li>
+  <li ng-repeat="parent in parents"><a href="{{ '#cat' + parent.id }}">{{ parent.name }}</a></li>
+  <li><a href="#about">About us</a></li>
+</ul>
+<!-- ▲ サイドバー ▲ -->
 
 </div>

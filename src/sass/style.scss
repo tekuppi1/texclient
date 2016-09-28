@@ -57,7 +57,7 @@ nav .container {
 	}
 }
 .parallax-container {
-	//user-select: none;
+	user-select: none;
 	cursor: pointer;
   height: 70vh;
 }
@@ -69,7 +69,7 @@ nav .container {
 		z-index: 1000;
 	}
 	.carousel-item {
-		//user-select: none;
+		user-select: none;
 		padding: 5px;
 		height: 300px;
 	}
@@ -102,21 +102,60 @@ nav .container {
 	top: 0px;
 	margin-top: 0;
 	opacity: 0;
-}
-.fadein {
-	animation-duration: 0.5s;
-  animation-name: slidein;
-	animation-fill-mode: forwards;
-	@keyframes slidein {from { opacity:0;} to { opacity: 1;}}
-}
-.fadeout {
-	animation-duration: 0.2s;
-  animation-name: slideout;
-	animation-fill-mode: forwards;
-	@keyframes slideout {from { opacity:1;} to { opacity: 0;}}
+	visibility: hidden;
+	&.fadein {
+		animation-duration: 0.5s;
+		animation-name: slidein;
+		animation-fill-mode: forwards;
+		@keyframes slidein {
+			0% { visibility: visible;}
+			1% { opacity:0;}
+			100% { opacity: 1;visibility: visible;}
+		}
+	}
+	&.fadeout {
+		animation-duration: 0.2s;
+		animation-name: slideout;
+		animation-fill-mode: forwards;
+		@keyframes slideout {
+			0% { opacity:1;visibility: visible;}
+			99% { opacity: 0;}
+			100% { visibility: hidden;}
+		}
+	}
 }
 //------------------------------------------------------
-
+// サイドバーボタン
+.button-collapse {
+	position: absolute;
+	top: 0px;
+	z-index: 3000;
+}
+.sideber {
+	width: 250px;
+	transform: translateX(-100%);
+	&.fadein {
+		animation-duration: 0.5s;
+		animation-name: slidein;
+		animation-fill-mode: forwards;
+		@keyframes slidein {
+			0% { visibility: visible;}
+			1% { transform: translateX(-100%);}
+			100% { transform: translateX(0%);visibility: visible;}
+		}
+	}
+	&.fadeout {
+		animation-duration: 0.2s;
+		animation-name: slideout;
+		animation-fill-mode: forwards;
+		@keyframes slideout {
+			0% { transform: translateX(0%);visibility: visible;}
+			99% { transform: translateX(-100%);}
+			100% { visibility: hidden;}
+		}
+	}
+}
+//------------------------------------------------------
 .side-nav a {
 	color: #fafafa;
 }

@@ -1867,11 +1867,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _init = require('../util/init');
+var _animation = require('../util/animation');
 
-var _init2 = _interopRequireDefault(_init);
+var anime = _interopRequireWildcard(_animation);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 //TODO: カテゴリ情報の集約地点を作成
 //TODO: サイドバーのロジックの修正
@@ -1886,14 +1886,19 @@ exports.default = angular.module('controllers.header', []).controller('headerCon
     console.log("onLoadHeader");
     jQuery('.carousel').carousel();
     jQuery('.carousel.carousel-slider').carousel({ full_width: true });
-    jQuery('.button-collapse').sideNav({ menuWidth: 250, closeOnClick: true });
+    window.addEventListener('scroll', anime.onScroll, false);
+  };
 
-    //TODO: アニメーション強化
-    window.addEventListener('scroll', _init2.default, false);
+  /**
+   * サイドバーの表示
+   * @param {boolean} bool - true:表示,false:非表示
+   */
+  $scope.onSideber = function (bool) {
+    anime.onSideber(bool);
   };
 }]);
 
-},{"../util/init":15}],13:[function(require,module,exports){
+},{"../util/animation":14}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1972,7 +1977,55 @@ exports.default = angular.module('controllers.main', []).controller('midControll
 }]); //本情報のクラス
 //APIのクラス
 
-},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":14}],14:[function(require,module,exports){
+},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":15}],14:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addFadein = addFadein;
+exports.addFadeout = addFadeout;
+exports.onScroll = onScroll;
+exports.onSideber = onSideber;
+//--------------------------
+// アニメーションメソッド
+//--------------------------
+
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadein(name) {
+  $(name).addClass("fadein");
+  $(name).removeClass("fadeout");
+}
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadeout(name) {
+  $(name).addClass("fadeout");
+  $(name).removeClass("fadein");
+}
+//---------------------------------------------------------------------------------
+/**
+ * スクロールのトップバー表示
+ */
+function onScroll() {
+  $(window).scrollTop() > 90 ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
+}
+
+/**
+ * スクロールのサイドバー表示
+ * @param {boolean=true} bool - 表示時:ture,非表示時:false
+ */
+function onSideber() {
+  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+  bool ? addFadein('#sideber') : addFadeout('#sideber');
+}
+
+},{}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2082,26 +2135,7 @@ var ApiClass = function () {
 
 exports.default = ApiClass;
 
-},{"superagent":2}],15:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = onScroll;
-//jQuery使いすぎなのでリファクタ必要
-
-function onScroll() {
-  if ($(window).scrollTop() > 90) {
-    $('.navbar-fixed-top').addClass("fadein");
-    $('.navbar-fixed-top').removeClass("fadeout");
-  } else {
-    $('.navbar-fixed-top').addClass("fadeout");
-    $('.navbar-fixed-top').removeClass("fadein");
-  }
-}
-
-},{}],16:[function(require,module,exports){
+},{"superagent":2}],16:[function(require,module,exports){
 'use strict';
 
 var _common = require('./controller/common');

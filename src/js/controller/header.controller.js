@@ -1,4 +1,4 @@
-import onScroll from '../util/init';
+import * as anime  from '../util/animation';
 //TODO: カテゴリ情報の集約地点を作成
 //TODO: サイドバーのロジックの修正
 
@@ -13,10 +13,13 @@ export default angular.module('controllers.header', [])
       console.log("onLoadHeader");
         jQuery('.carousel').carousel();
         jQuery('.carousel.carousel-slider').carousel({full_width: true});
-        jQuery('.button-collapse').sideNav({menuWidth: 250,closeOnClick: true});
-
-        //TODO: アニメーション強化
-        window.addEventListener('scroll', onScroll, false);
+        window.addEventListener('scroll', anime.onScroll, false);
     }
+
+    /**
+     * サイドバーの表示
+     * @param {boolean} bool - true:表示,false:非表示
+     */
+    $scope.onSideber = (bool) => { anime.onSideber(bool); }
 
   }]);
