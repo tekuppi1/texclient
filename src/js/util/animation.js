@@ -23,7 +23,12 @@ export function addFadeout(name){
  * スクロールのトップバー表示
  */
 export function onScroll() {
-  ($(window).scrollTop() > 90) ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
+  let scrollTop = $(window).scrollTop();
+  if(scrollTop < 50){
+    jQuery('ul.tabs').tabs(); //このロジックいまいち（エラー吐くでな）
+    jQuery('.modal-trigger').leanModal();
+  }
+  (!$('#sideber').hasClass("fadein") && scrollTop > 90) ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
 }
 
 /**
@@ -32,6 +37,7 @@ export function onScroll() {
  */
 export function onSideber(bool=true) {
   bool ? addFadein('#sideber') : addFadeout('#sideber');
+  bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
 }
 
 

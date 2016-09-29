@@ -17,16 +17,17 @@ export default angular.module('controllers.main', [])
     //メイン初期描画時
     $scope.onLoadMid = () => {
       console.log("onLoadMid");
-        $scope.parents = [{id: 1,name:"南山大学",},{id: 2,name:"名古屋大学",},{id: 3,name:"その他",},];
-        $scope.categories = [
-          {id: 1,parent: 1,name:"nanzan-1",},
-          {id: 2,parent: 1,name:"nanzan-2",},
-          {id: 3,parent: 1,name:"nanzan-3",},
-          {id: 4,parent: 2,name:"meidai-1",},
-          {id: 5,parent: 2,name:"meidai-2",},
-          {id: 6,parent: 3,name:"other-1",},
-        ];
-        $scope.books = [{
+      $scope.parents = [{id: 1,name:"南山大学",},{id: 2,name:"名古屋大学",},{id: 3,name:"その他",},];
+      $scope.categories = [
+        {id: 1,parent: 1,name:"nanzan-1",},
+        {id: 2,parent: 1,name:"nanzan-2",},
+        {id: 3,parent: 1,name:"nanzan-3",},
+        {id: 4,parent: 2,name:"meidai-1",},
+        {id: 5,parent: 2,name:"meidai-2",},
+        {id: 6,parent: 3,name:"other-1",},
+      ];
+      $scope.books = [
+        {
           id: 1,
           category: 1,
           title: "民法〈2〉物権・担保物権 (ファンダメンタル法学講座)",
@@ -136,12 +137,8 @@ export default angular.module('controllers.main', [])
           amazon: 2484,
           count: 1,
           description: "",
-        }];
-    }
-    $scope.onLoadTab = () => {
-      console.log(jQuery('ul.tabs'));
-      jQuery('ul.tabs').tabs();
+        }
+      ];
     }
 
-    
   }]);

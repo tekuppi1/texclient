@@ -2053,10 +2053,6 @@ exports.default = angular.module('controllers.main', []).controller('midControll
       description: ""
     }];
   };
-  $scope.onLoadTab = function () {
-    console.log(jQuery('ul.tabs'));
-    jQuery('ul.tabs').tabs();
-  };
 }]); //本情報のクラス
 //APIのクラス
 
@@ -2173,7 +2169,12 @@ function addFadeout(name) {
  * スクロールのトップバー表示
  */
 function onScroll() {
-  $(window).scrollTop() > 90 ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
+  var scrollTop = $(window).scrollTop();
+  if (scrollTop < 50) {
+    jQuery('ul.tabs').tabs(); //このロジックいまいち（エラー吐くでな）
+    jQuery('.modal-trigger').leanModal();
+  }
+  !$('#sideber').hasClass("fadein") && scrollTop > 90 ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
 }
 
 /**
@@ -2184,6 +2185,7 @@ function onSideber() {
   var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
 
   bool ? addFadein('#sideber') : addFadeout('#sideber');
+  bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
 }
 
 },{}],16:[function(require,module,exports){
