@@ -1817,6 +1817,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _api = require('../util/api');
+
+var _api2 = _interopRequireDefault(_api);
+
 var _header = require('./header.controller');
 
 var _header2 = _interopRequireDefault(_header);
@@ -1842,6 +1846,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //----------------------------------------------------------------------
 // グローバル コントローラ
 //----------------------------------------------------------------------
+// INCLUDE
 exports.default = angular.module('mainApp.controller', [_header2.default.name, _stabMain2.default.name, _main2.default.name, _footer2.default.name]).controller('mainController', ['$scope', function ($scope) {
   console.log("mainController");
   var loading = new _loading2.default();
@@ -1849,9 +1854,128 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
   $scope.hideIndicator = function () {
     loading.hide();
   };
-}]); // INCLUDE
 
-},{"../components/loading":7,"./footer.controller":11,"./header.controller":12,"./main.controller":13,"./stabMain.controller":14}],11:[function(require,module,exports){
+  $scope.parents = [{ id: 1, name: "南山大学" }, { id: 2, name: "名古屋大学" }, { id: 3, name: "その他" }];
+  $scope.categories = [{ id: 1, parent: 1, name: "nanzan-1" }, { id: 2, parent: 1, name: "nanzan-2" }, { id: 3, parent: 1, name: "nanzan-3" }, { id: 4, parent: 2, name: "meidai-1" }, { id: 5, parent: 2, name: "meidai-2" }, { id: 6, parent: 3, name: "other-1" }];
+  $scope.books = [{
+    id: 1,
+    category: 1,
+    title: "民法〈2〉物権・担保物権 (ファンダメンタル法学講座)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg",
+    author: "nanzan-1",
+    point: 2,
+    amazon: 3672,
+    count: 1,
+    description: ""
+  }, {
+    id: 2,
+    category: 1,
+    title: "TOEIC(R) テスト BEYOND 990 超上級リーディング 7つのコアスキル",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51q6IJjNfbL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 3,
+    category: 2,
+    title: "微分",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/4133qr1x9rL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 4,
+    category: 2,
+    title: "新TOEIC TEST サラリーマン特急 満点リーディング",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 5,
+    category: 3,
+    title: "長考力 1000手先を読む技術 (幻冬舎新書)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/31p9ELA9OEL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 6,
+    category: 3,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 7,
+    category: 4,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 8,
+    category: 1,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 9,
+    category: 1,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 10,
+    category: 1,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }, {
+    id: 11,
+    category: 6,
+    title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
+    img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
+    author: "テッド寺倉",
+    point: 2,
+    amazon: 2484,
+    count: 1,
+    description: ""
+  }];
+
+  // APIリクエスト
+  $scope.onLoadRequestAPI = function () {
+    (0, _api2.default)($scope, "book");
+  };
+}]); //APIのクラス
+
+},{"../components/loading":7,"../util/api":17,"./footer.controller":11,"./header.controller":12,"./main.controller":13,"./stabMain.controller":14}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1900,7 +2024,7 @@ exports.default = angular.module('controllers.header', []).controller('headerCon
   };
 }]);
 
-},{"../util/animation":15}],13:[function(require,module,exports){
+},{"../util/animation":16}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1932,131 +2056,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // INCLUDE
 exports.default = angular.module('controllers.main', []).controller('midController', ['$scope', function ($scope) {
   console.log("controllers.main");
-  var sampleApi = new _api2.default("sample");
   var loading = new _loading2.default();
   var modal = new _modal2.default();
 
   //メイン初期描画時
   $scope.onLoadMid = function () {
     console.log("onLoadMid");
-    $scope.parents = [{ id: 1, name: "南山大学" }, { id: 2, name: "名古屋大学" }, { id: 3, name: "その他" }];
-    $scope.categories = [{ id: 1, parent: 1, name: "nanzan-1" }, { id: 2, parent: 1, name: "nanzan-2" }, { id: 3, parent: 1, name: "nanzan-3" }, { id: 4, parent: 2, name: "meidai-1" }, { id: 5, parent: 2, name: "meidai-2" }, { id: 6, parent: 3, name: "other-1" }];
-    $scope.books = [{
-      id: 1,
-      category: 1,
-      title: "民法〈2〉物権・担保物権 (ファンダメンタル法学講座)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg",
-      author: "nanzan-1",
-      point: 2,
-      amazon: 3672,
-      count: 1,
-      description: ""
-    }, {
-      id: 2,
-      category: 1,
-      title: "TOEIC(R) テスト BEYOND 990 超上級リーディング 7つのコアスキル",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51q6IJjNfbL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 3,
-      category: 2,
-      title: "微分",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/4133qr1x9rL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 4,
-      category: 2,
-      title: "新TOEIC TEST サラリーマン特急 満点リーディング",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 5,
-      category: 3,
-      title: "長考力 1000手先を読む技術 (幻冬舎新書)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/31p9ELA9OEL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 6,
-      category: 3,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 7,
-      category: 4,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 8,
-      category: 1,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 9,
-      category: 1,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 10,
-      category: 1,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }, {
-      id: 11,
-      category: 6,
-      title: "プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)",
-      img: "http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg",
-      author: "テッド寺倉",
-      point: 2,
-      amazon: 2484,
-      count: 1,
-      description: ""
-    }];
   };
 }]); //本情報のクラス
 //APIのクラス
 
-},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":16}],14:[function(require,module,exports){
+},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":17}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2134,61 +2144,7 @@ exports.default = angular.module('controllers.stabMain', []).controller('stabMid
 }]); //本情報のクラス
 //APIのクラス
 
-},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":16}],15:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.addFadein = addFadein;
-exports.addFadeout = addFadeout;
-exports.onScroll = onScroll;
-exports.onSideber = onSideber;
-//--------------------------
-// アニメーションメソッド
-//--------------------------
-
-/**
- * フェードインクラスの付加
- * @param {string} name - 適用するタグ名
- */
-function addFadein(name) {
-  $(name).addClass("fadein");
-  $(name).removeClass("fadeout");
-}
-/**
- * フェードインクラスの付加
- * @param {string} name - 適用するタグ名
- */
-function addFadeout(name) {
-  $(name).addClass("fadeout");
-  $(name).removeClass("fadein");
-}
-//---------------------------------------------------------------------------------
-/**
- * スクロールのトップバー表示
- */
-function onScroll() {
-  var scrollTop = $(window).scrollTop();
-  if (scrollTop < 50) {
-    jQuery('ul.tabs').tabs(); //このロジックいまいち（エラー吐くでな）
-    jQuery('.modal-trigger').leanModal();
-  }
-  !$('#sideber').hasClass("fadein") && scrollTop > 90 ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
-}
-
-/**
- * スクロールのサイドバー表示
- * @param {boolean=true} bool - 表示時:ture,非表示時:false
- */
-function onSideber() {
-  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
-
-  bool ? addFadein('#sideber') : addFadeout('#sideber');
-  bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
-}
-
-},{}],16:[function(require,module,exports){
+},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":17}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2298,7 +2254,109 @@ var ApiClass = function () {
 
 exports.default = ApiClass;
 
-},{"superagent":2}],17:[function(require,module,exports){
+},{"superagent":2}],16:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addFadein = addFadein;
+exports.addFadeout = addFadeout;
+exports.onScroll = onScroll;
+exports.onSideber = onSideber;
+//--------------------------
+// アニメーションメソッド
+//--------------------------
+
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadein(name) {
+  $(name).addClass("fadein");
+  $(name).removeClass("fadeout");
+}
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadeout(name) {
+  $(name).addClass("fadeout");
+  $(name).removeClass("fadein");
+}
+//---------------------------------------------------------------------------------
+/**
+ * スクロールのトップバー表示
+ */
+function onScroll() {
+  var scrollTop = $(window).scrollTop();
+  if (scrollTop < 50) {
+    jQuery('ul.tabs').tabs(); //このロジックいまいち（エラー吐くでな）
+    jQuery('.modal-trigger').leanModal();
+  }
+  !$('#sideber').hasClass("fadein") && scrollTop > 90 ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');
+}
+
+/**
+ * スクロールのサイドバー表示
+ * @param {boolean=true} bool - 表示時:ture,非表示時:false
+ */
+function onSideber() {
+  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+  bool ? addFadein('#sideber') : addFadeout('#sideber');
+  bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
+}
+
+},{}],17:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = LoadRequestAPI;
+
+var _ApiClass = require('../util/ApiClass');
+
+var _ApiClass2 = _interopRequireDefault(_ApiClass);
+
+var _loading = require('../components/loading');
+
+var _loading2 = _interopRequireDefault(_loading);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * API通信用
+ * @param {Object} $scope - スコープ
+ * @param {String} path - root以下のパス
+ */
+// INCLUDE
+function LoadRequestAPI($scope, path) {
+  console.log("onLoadRequestAPI");
+  var api = new _ApiClass2.default(path);
+  var loading = new _loading2.default();
+  loading.show();
+
+  // APIリクエスト(Thenでres|errorを受け取ってください。)
+  api.post().then(function (res) {
+    console.log("API OK!");
+    console.log(res.books);
+    $scope.parents = res.parents;
+    $scope.categories = res.categories;
+    $scope.books = res.books;
+    loading.hide();
+    $scope.$apply(); //画面更新
+    jQuery('ul.tabs').tabs(); //描画後にtabにアニメーションを適用してね！
+    jQuery('.modal-trigger').leanModal(); //描画後にモーダルのアニメーションを適用してね！
+  }, function (error) {
+    console.log("API NG!");
+    loading.hide();
+    $scope.$apply(); //画面更新
+  });
+} //APIのクラス
+
+},{"../components/loading":7,"../util/ApiClass":15}],18:[function(require,module,exports){
 'use strict';
 
 var _common = require('./controller/common');
@@ -2332,4 +2390,4 @@ angular.module('main', [_common2.default.name]);
  * 
  ********************************************************************/
 
-},{"./controller/common":10}]},{},[17]);
+},{"./controller/common":10}]},{},[18]);

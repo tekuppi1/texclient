@@ -1,5 +1,6 @@
 <!-- メインコンテンツ -->
 <div>
+  <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI()" >Request API from book</div>
   <div ng-repeat="parent in parents" ng-attr-id="{{ 'cat' + parent.id }}">
 
   <!-- ▼ 親カテゴリ項目（学校名,etc.） ▼ -->
@@ -46,11 +47,7 @@
   </div>
   </div></div></div>
   <div class="modal-footer">
-    <!--span class="bottom-button"><a class="waves-effect waves-light btn orange accent-3" width="50%" ng-href="{{ '?order='+ book.id }}">
-      <i class="material-icons" style="font-size:0.85rem;">add_shopping_cart</i>予約
-    </a></span>
-    <span class="bottom-button"><a class="waves-effect modal-action modal-close waves-green btn-flat">閉じる</a></span-->
-      <div class="waves-effect modal-action modal-close footer-button">閉じる</div>
+    <div class="waves-effect modal-action modal-close footer-button">閉じる</div>
       <div class="waves-effect waves-light orange accent-3 footer-button text-white" ng-href="{{ '?order='+ book.id }}">
           <i class="material-icons" style="font-size:0.85rem;">add_shopping_cart</i>予約
       </div>
