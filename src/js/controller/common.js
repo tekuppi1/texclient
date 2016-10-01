@@ -144,8 +144,11 @@ export default angular.module('mainApp.controller', [
       }
     ];
 
-    // APIリクエスト
-    $scope.onLoadRequestAPI = () => {
-      LoadRequestAPI($scope,"book");
+    /**
+     * APIリクエスト用のメソッド
+     * @param {String} path - APIのパス名
+     */
+    $scope.onLoadRequestAPI = (path) => {
+      LoadRequestAPI($scope,path);
     }
   }]);

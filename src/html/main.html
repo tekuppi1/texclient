@@ -1,6 +1,6 @@
 <!-- メインコンテンツ -->
 <div>
-  <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI()" >Request API from book</div>
+  <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI('book')" >Request API from book</div>
   <div ng-repeat="parent in parents" ng-attr-id="{{ 'cat' + parent.id }}">
 
   <!-- ▼ 親カテゴリ項目（学校名,etc.） ▼ -->
@@ -17,6 +17,7 @@
   <!-- ▼ カテゴリ項目 ▼ -->
   <div ng-repeat="category in categories | filter : {parent: parent.id}" ng-attr-id="{{ category.name }}" class="col s12">
 
+  <!-- ▼ 本一覧 ▼ -->
   <div ng-repeat="book in books | filter : {category: category.id}" class="col s6 m3">
   <div class="card sticky-action medium" style="height:300px">
   <div class="card-image waves-effect waves-block waves-light center"><img class="activator" ng-src="{{ book.img }}"></div>

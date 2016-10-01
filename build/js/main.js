@@ -1969,9 +1969,12 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
     description: ""
   }];
 
-  // APIリクエスト
-  $scope.onLoadRequestAPI = function () {
-    (0, _api2.default)($scope, "book");
+  /**
+   * APIリクエスト用のメソッド
+   * @param {String} path - APIのパス名
+   */
+  $scope.onLoadRequestAPI = function (path) {
+    (0, _api2.default)($scope, path);
   };
 }]); //APIのクラス
 
