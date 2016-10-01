@@ -50,9 +50,18 @@ ul {
     line-height: 56px;
 }
 .btn {
-	padding: 0 0.9rem !important;
+	padding: 0 0.9rem;
 }
 #twitter {
 	background-color: #1DA1F2;
   height: 70vh;
+}
+.full-length {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.text-white {
+  color: #fff;
 }

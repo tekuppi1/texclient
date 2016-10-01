@@ -16,7 +16,7 @@
     position: absolute;
     bottom: 0;
     height: 250px;
-    z-index: 1000; }
+    z-index: 800; }
   .parallax-container .carousel-item {
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -41,7 +41,7 @@ nav .container {
 
 .navbar-fixed-top {
   position: fixed;
-  z-index: 5000;
+  z-index: 900;
   padding: 0px 0;
   background: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.05);
@@ -127,6 +127,8 @@ nav .container {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.6), 2px 0 20px 0 rgba(40, 40, 40, 0.2); }
+  .sideber .divider {
+    margin: 1px 0px; }
   .sideber.fadein {
     -webkit-animation-duration: 0.5s;
             animation-duration: 0.5s;
@@ -268,7 +270,7 @@ nav .container {
   padding: 0;
   border: none;
   border-top: solid 5px #ff6d00;
-  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 200px;
   margin: 0 auto 15px auto; }
@@ -287,22 +289,45 @@ nav .container {
   margin: 0 auto; }
 
 .card .card-action {
-  padding: 10px; }
+  padding: 0px; }
+  .card .card-action .modal-trigger {
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    box-shadow: 0 1px 3px 0 rgba(128, 128, 128, 0.5); }
 
 .card .card-content {
-  height: 50px !important;
-  padding: 3px 5px !important; }
+  height: 50px;
+  padding: 3px 5px; }
 
 .card .card-image {
-  height: 200px !important;
-  min-height: 200px !important; }
+  height: 200px;
+  min-height: 200px; }
 
 .modal {
   max-height: 80%; }
   .modal .modal-fixed-footer {
     height: 80%; }
   .modal .bottom-sheet {
-    max-height: 65% !important; }
+    max-height: 65%; }
+  .modal .modal-header {
+    padding: 0px;
+    text-align: center;
+    line-height: 1.61803em;
+    font-size: 1.61803em;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.1); }
+  .modal .modal-footer {
+    height: 2.61803em;
+    padding: 0px; }
+  .modal .footer-button {
+    display: table-cell;
+    text-align: center;
+    line-height: 2.61803em;
+    float: left;
+    width: 50%;
+    height: 100%;
+    opacity: 0.7; }
   @media only screen and (max-width: 992px) {
     .modal {
       width: 90%; }
@@ -506,9 +531,18 @@ ul {
   line-height: 56px; }
 
 .btn {
-  padding: 0 14.4px !important;
-  padding: 0 0.9rem !important; }
+  padding: 0 14.4px;
+  padding: 0 0.9rem; }
 
 #twitter {
   background-color: #1DA1F2;
   height: 70vh; }
+
+.full-length {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+.text-white {
+  color: #fff; }

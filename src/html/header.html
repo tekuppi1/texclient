@@ -69,6 +69,7 @@
 </div>
 <!-- ▲ 記事 ▲ -->
 
+<!-- ----------------------------------------------------------------------------------------- -->
 <!-- ▼ サイドバー ▼ -->
 <ul class="side-nav amber darken-2 sideber" id="sideber">
   <li><a ng-click="onSideber(false)"><i class="material-icons white-text">close</i></a></li>
@@ -76,7 +77,7 @@
   <li ng-repeat="parent in parents"><a href="{{ '#cat' + parent.id }}">{{ parent.name }}</a></li>
   <li><a href="#about">About us</a></li>
 </ul>
-<div class="sideber-overlay" id="sideber-overlay"></div>
+<div class="sideber-overlay" id="sideber-overlay" ng-click="onSideber(false)"></div>
 <!-- ▲ サイドバー ▲ -->
 
 </div>
