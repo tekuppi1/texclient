@@ -1,8 +1,6 @@
 //----------------------------------------------------------------------
 // INCLUDE
 //----------------------------------------------------------------------
-//angular = require("angular");
-//jQuery = require("jquery");
 import mainController from './controller/common';
 
 
