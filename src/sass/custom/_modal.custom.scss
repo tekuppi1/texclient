@@ -1,0 +1,39 @@
+//constant
+$swiper_buttom : ms(-1);
+
+//style
+.modal.bottom-sheet{
+  max-height: 75%;
+}
+
+.modal .modal-content {
+    padding: ms(0);
+}
+
+.modal-content {
+
+  h4{
+    font-size: ms(1);
+  }
+
+  p{
+    font-size: ms(0);
+    margin: ms(-4);
+  }
+
+  .modal-close-button {
+    position:absolute; 
+    right : ms(0);
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: $swiper_buttom;
+  }
+  .swiper-button-custom {
+    height: ms(0);
+    width: ms(2);
+    top: initial;
+    bottom: $swiper_buttom;
+    opacity: 0.5;
+  }
+}

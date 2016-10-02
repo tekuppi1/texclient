@@ -26,24 +26,3 @@ they are prevented from expensive textbook costs.
 
 * 在庫の検索
 * 本の予約
-
-<br />
-
-## _Installation / インストール_
-Take following steps to install our whole system on your computers.
-
-1. Install Bootstrap
-2. Install Node.js
-3. Install Gulp.js
-4. Check installed PHP version
-5. Create a Database
-
-***
-
-以下の手順は、システムの総体をインストールするためのものです。
-
-1. Bootstrap のインストール
-2. Node.js のインストール
-3. Gulp.js のインストール
-4. PHP のバージョンを確認する
-5. データベースの構築

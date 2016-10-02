@@ -1,0 +1,95 @@
+//----------------------------------------------------------------------
+// メインコンテンツ スタイルシート
+//----------------------------------------------------------------------
+//タイトル 部分
+.cat-title {
+	padding-top: 80px;
+	color: #ff6d00;
+}
+.hr-line {
+	padding: 0;
+	border: none;
+	border-top: solid 5px #ff6d00;
+	box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+	text-align: center;
+	max-width: 200px;
+	margin: 0 auto 15px auto;
+}
+//------------------------------------------------------
+// カテゴリ タブ
+.tabs {
+  .tab a {
+    color: #fb8c00;
+    &:hover {
+      color: #e65100;
+    }
+  }
+  .indicator {
+    background-color: #e65100;
+  }
+}
+//------------------------------------------------------
+// カード表示
+.card {
+  .card-image img {
+    width: auto;
+    height: 90%;
+    margin: 0 auto;
+  }
+  .card-action {
+    //padding: 10px;
+    padding: 0px;
+    .modal-trigger{
+      border-radius: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+      box-shadow: 0 1px 3px 0 rgba( 128, 128, 128, 0.5);
+    }
+  }
+  .card-content {
+    height:50px;
+    padding: 3px 5px;
+  }
+  .card-image {
+    height:200px;
+    min-height:200px;
+  }
+}
+//------------------------------------------------------
+// モ－ダル表示
+.modal {
+	max-height:80%;
+  .modal-fixed-footer {
+	  height: 80%;
+  }
+  .bottom-sheet {
+    max-height: 65%;
+  }
+  .modal-header{
+    padding: 0px;
+    text-align: center;
+    line-height: ms(1);
+    font-size: ms(1);
+    border-bottom: 2px solid rgba(128,128,128,0.1);
+  }
+  .modal-footer{
+    height: ms(2);
+    padding: 0px;
+  }
+  .footer-button {
+    display: table-cell;
+    text-align: center;
+    line-height: ms(2);
+    float: left;
+    width: 50%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  @media only screen and (max-width: 992px) {
+    width: 90%;
+    .modal .modal-content {
+      padding: 0px;
+    }
+  }
+}
