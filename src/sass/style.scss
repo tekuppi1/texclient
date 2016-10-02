@@ -1,0 +1,67 @@
+//----------------------------------------------------------------------
+// External stylesheet
+//----------------------------------------------------------------------
+@import 'node_modules/modularscale-sass/stylesheets/modular-scale';
+
+//----------------------------------------------------------------------
+// internal stylesheet
+//----------------------------------------------------------------------
+@import "components/header";
+@import "components/main";
+//@import "custom/noscript.custom";
+@import "custom/swiper.custom";
+@import "custom/modal.custom";
+@import "custom/loading.custom";
+
+
+//----------------------------------------------------------------------
+// custom stylesheet
+//----------------------------------------------------------------------
+$ms-base: 1em;
+$ms-ratio: $golden;
+
+//TODO: ファイル分割して管理しやすく
+
+/**
+ * 【導入ライブラリ】
+ *
+ * [modular-scale]
+ *  - ma(n) で黄金比に変換されるよ。
+ *  - ベースはma(0)
+ */
+
+/* Techange team 2016 */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+  font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+}
+ul {
+  margin-left:20px;
+}
+#stab-main-content{
+  margin: ms(0);
+}
+.top-menu {
+    color: #fff;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+}
+.btn {
+	padding: 0 0.9rem;
+}
+#twitter {
+	background-color: #1DA1F2;
+  height: 70vh;
+}
+.full-length {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.text-white {
+  color: #fff;
+}
