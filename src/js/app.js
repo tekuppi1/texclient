@@ -1,7 +1,6 @@
 //----------------------------------------------------------------------
 // INCLUDE
 //----------------------------------------------------------------------
-angular = require("angular");
 import mainController from './controller/common';
 
 
@@ -10,9 +9,7 @@ import mainController from './controller/common';
 //----------------------------------------------------------------------
 window.onload = () => {
   console.log('Page Loaded');
-  $('.modal-trigger').leanModal();
 };
-
 
 //----------------------------------------------------------------------
 // コントローラ

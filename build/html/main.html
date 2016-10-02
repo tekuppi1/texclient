@@ -1,35 +1,56 @@
 <!-- メインコンテンツ -->
 <div>
-  <p><input type="text"></p>
-  <h2>Hello {{yourName}}!</h2>
-  <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-  <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI()" >Request API</div>
+  <div class="waves-effect waves-light btn" ng-click="onLoadRequestAPI('book')" >Request API from book</div>
+  <div ng-repeat="parent in parents" ng-attr-id="{{ 'cat' + parent.id }}">
 
-  <div>
-    <div id="serch_count">検索数： {{serch_count}}<div>
-    <table class="bordered">
-      <thead>
-        <tr>
-          <th data-field="books_title">タイトル</th>
-          <th data-field="books_author">著者</th>
-          <th data-field="books_price">価格</th>
-          <th data-field="books_url">imgURL</th>
-          <th data-field="books_button">予約</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="book in books">
-          <td>{{book.book_title}}</td>
-          <td>{{book.book_author}}</td>
-          <td>{{book.book_price}}</td>
-          <td>{{book.book_img}}</td>
-          <td>
-            <a class="modal-trigger waves-effect waves-light btn" ng-click="pushReservation(book)">
-              欲しい<i class="material-icons right">send</i>
-            </a>
-          </td>
-        <tr>
-      </tbody>
-    </table>
+  <!-- ▼ 親カテゴリ項目（学校名,etc.） ▼ -->
+  <h2 class="center cat-title">{{ parent.name}}</h2>
+  <hr class="hr-line">
+  <div class="row"><div class="col s12">
+  <ul class="tabs">
+    <li class="tab col s3" ng-repeat="category in categories | filter : {parent: parent.id}"><a ng-href="{{ '#'+ category.name }}">{{ category.name }} </a></li>
+  </ul>
+  </div></div>
+
+  <div class="row">
+
+  <!-- ▼ カテゴリ項目 ▼ -->
+  <div ng-repeat="category in categories | filter : {parent: parent.id}" ng-attr-id="{{ category.name }}" class="col s12">
+
+  <!-- ▼ 本一覧 ▼ -->
+  <div ng-repeat="book in books | filter : {category: category.id}" class="col s6 m3">
+  <div class="card sticky-action medium" style="height:300px">
+  <div class="card-image waves-effect waves-block waves-light center"><img class="activator" ng-src="{{ book.img }}"></div>
+  <div class="card-content"><span class="card-title activator grey-text text-darken-4"><i class="material-icons right">add</i></span><p>{{ book.title }}</p></div>
+    <div class="card-action center"><a class="waves-effect waves-light btn orange accent-3 modal-trigger" ng-href="{{ '#modal' + book.id }}">
+      <i class="material-icons" style="font-size:0.90rem;">add_shopping_cart</i>予約
+    </a></div>
+    <div class="card-reveal"><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></i></span><p>{{ book.title }}</p></div>
+  </div></div></div></div></div>
+
+  <!-- ▼ モーダル表示 ▼ -->
+  <div ng-repeat="book in books" ng-attr-id="{{ 'modal' + book.id }}" class="modal modal-fixed-footer">
+  <div class="modal-header">予約</div>
+  <div class="modal-content">
+  <div class="row">
+  <div class="row">
+  <div class="col s12 m3 center"><img ng-src="{{ book.img }}"></div>
+  <div class="col s12 m9">
+    <p>
+      商品名: {{ book.title }}<br>
+      著者: {{ book.author }}<br>
+      ポイント数: {{ book.point }} <br>
+      Amazon価格: {{ book.amazon }}<br>
+      残り冊数: {{ book.count }}<br>
+      補足情報: {{ book.description }}
+    </p>
+    <p class="center"></p>
   </div>
+  </div></div></div>
+  <div class="modal-footer">
+    <div class="waves-effect modal-action modal-close footer-button">閉じる</div>
+      <div class="waves-effect waves-light orange accent-3 footer-button text-white" ng-href="{{ '?order='+ book.id }}">
+          <i class="material-icons" style="font-size:0.85rem;">add_shopping_cart</i>予約
+      </div>
+  </div></div>
 </div>

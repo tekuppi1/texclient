@@ -1,27 +1,47 @@
 <!doctype html>
 <html>
 <head>
-  <!-- Load Script -->
-  <script src="lib/js/angular.min.js"></script>
-  <script src="lib/js/jquery.min.js"></script>
-  <script src="lib/js/swiper.min.js"></script>
-  <script src="lib/js/materialize.min.js"></script>
-  <script src="build/js/main.js"></script>
+  <meta charset="utf-8">
+  <title>Texchange</title>
+    <meta name="description" content="texchange book service">
+  <meta name="author" content="texchange">
 
   <!-- Load Stylesheet -->
-  <link rel="stylesheet" href="lib/css/swiper.min.css">
-  <link rel="stylesheet" href="lib/css/materialize.min.css"/>
+  <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata"-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="lib/css/materialize.min.css"/>
+  <link rel="stylesheet" href="lib/css/swiper.min.css">
   <link rel="stylesheet" href="build/css/style.css">
 
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 </head>
 <body ng-app="main">
+  <!--noscript>
+    <div class="parent-nojserror">
+    <div class="nojserror">
+    <p>JavaScript seems to be disabled in your browser</p>
+    <p>Please enable it to view the website</p>
+    <p>JavaScriptを有効にしてページを更新してください</p>
+    </div>
+    </div>
+  </noscript-->
   <div id="content" ng-controller="mainController">
-    <div id="header-content" ng-include="'build/html/header.html'" ng-controller="headerController"></div>
-    <div id="main-content" ng-include="'build/html/main.html'" ng-controller="midController" onload="onLoadModal()"></div>
+    <div id="header-content" ng-include="'build/html/header.html'" ng-controller="headerController" onload="onLoadHeader()"></div>
+    <!--div id="stab-main-content" ng-include="'build/html/stab_main.html'" ng-controller="stabMidController" onload="onLoadStabMid()"></div-->
+    <div id="main-content" ng-include="'build/html/main.html'" ng-controller="midController" onload="onLoadMid()"></div>
+    <!--div id="about-content" ng-include="'build/html/about.html'" ng-controller="aboutController"></div-->
     <div id="footer-content" ng-include="'build/html/footer.html'" ng-controller="footerController"></div>
     <div id="modal-content" ng-include="'build/html/components/modal.html'"></div>
     <div id="loading-content"  ng-class="loaderClass" ng-include="'build/html/components/loading.html'" ng-click="hideIndicator()"></div>
   </div>
+
+  <!-- Load Script -->
+  <script src="lib/js/jquery.min.js"></script>
+  <script src="lib/js/materialize.min.js"></script>
+  <script src="lib/js/angular.min.js"></script>
+  <!--script src="lib/js/swiper.min.js"></script-->
+  <script src="build/js/main.js"></script>
 </body>
+
 </html>

@@ -2,3 +2,4 @@ node_modules
 .sass-cache
 vscode
 .vscode/
+access_logs.db

@@ -1,68 +1,34 @@
 // INCLUDE
-let request = require('superagent');
+import ApiClass from '../util/ApiClass'; //APIのクラス
+import Loading from '../components/loading';
 
 /**
- * @class API通信クラス
+ * API通信用
+ * @param {Object} $scope - スコープ
  * @param {String} path - root以下のパス
  */
-export default class ApiClass{
+export default function LoadRequestAPI($scope,path){
+  console.log("onLoadRequestAPI");
+  const api = new ApiClass(path);
+  const loading = new Loading();
+  loading.show();
 
-  /**
-   * コンストラクタ
-   * @param {String} path - root以下のパス
-   */
-  constructor(path = null){
-    console.log("ApiClass.constructor START");
-    if(!path) console.log("apiパスが不足しています");
-    this.path = 'mock/' + path; //モックにpath通し
-  }
-
-  /**
-   * POSTを行うメソッド
-   * @param {Object} send - リクエストパラメータ
-   * @return {Object} resolve - レスポンスデータ
-   * @return {Object} reject - エラーオブジェクト
-   */
-  post(send = null){
-    console.log("ApiClass.post START");
-    if( !window.JSON ) return null;
-    return new Promise((resolve, reject) => {
-      request.post(this.path).send(send).end(
-        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}
-      )
-    });
-  }
-
-  /**
-   * GETを行うメソッド
-   * @param {Object} send - リクエストパラメータ
-   * @return {Object} resolve - レスポンスデータ
-   * @throws {Object} reject - エラーオブジェクト
-   */
-  get(send = null){
-    console.log("ApiClass.get START");
-    if( !window.JSON ) return null;
-    return new Promise((resolve, reject) => {
-      request.get(this.path).send(send).end(
-        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}
-      )
-    });
-  }
-
-  /**
-   * resolveのラップ
-   */
-  res(res){
-    console.log('success');
-    return res.body;
-  }
-
-  /**
-   * resolveのラップ
-   */
-  rej(err){
-    console.log('error');
-    return err;
-  }
-
+  // APIリクエスト(Thenでres|errorを受け取ってください。)
+  api.post().then(
+    (res) => {
+      console.log("API OK!");
+      console.log(res.books);
+      $scope.parents = res.parents;
+      $scope.categories = res.categories;
+      $scope.books = res.books;
+      loading.hide();
+      $scope.$apply(); //画面更新
+      jQuery('ul.tabs').tabs(); //描画後にtabにアニメーションを適用してね！
+      jQuery('.modal-trigger').leanModal(); //描画後にモーダルのアニメーションを適用してね！
+    },(error) => {
+      console.log("API NG!");
+      loading.hide();
+      $scope.$apply(); //画面更新
+    }
+  );
 }
