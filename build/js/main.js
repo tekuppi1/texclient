@@ -1565,6 +1565,38 @@ function request(RequestConstructor, method, url) {
 module.exports = request;
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+var _common = require('./controller/common');
+
+var _common2 = _interopRequireDefault(_common);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//----------------------------------------------------------------------
+// INITIALIZE
+//----------------------------------------------------------------------
+window.onload = function () {
+  console.log('Page Loaded');
+};
+
+//----------------------------------------------------------------------
+// コントローラ
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+// INCLUDE
+//----------------------------------------------------------------------
+angular.module('main', [_common2.default.name]);
+
+/*********************************************************************
+ * ## メモ ##
+ * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
+ * 
+ * 
+ * 
+ ********************************************************************/
+
+},{"./controller/common":11}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1589,7 +1621,7 @@ var Book = function () {
    * @param {Object} data - 本のオブジェクト
    */
   function Book() {
-    var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     _classCallCheck(this, Book);
 
@@ -1609,7 +1641,7 @@ var Book = function () {
   _createClass(Book, [{
     key: "set",
     value: function set() {
-      var data = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       if (!data) {
         console.log("Book set error");
@@ -1643,7 +1675,7 @@ var Book = function () {
 
 exports.default = Book;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1665,7 +1697,7 @@ var Loading = function () {
    * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
    */
   function Loading() {
-    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, Loading);
 
@@ -1706,7 +1738,7 @@ var Loading = function () {
 
 exports.default = Loading;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1735,7 +1767,7 @@ var Modal = function () {
   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
   */
 	function Modal() {
-		var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
 		_classCallCheck(this, Modal);
 
@@ -1777,7 +1809,7 @@ var Modal = function () {
 	}, {
 		key: "set",
 		value: function set() {
-			var book = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+			var book = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 			console.log("modal.set");
 			this.$scope.modal_books = book;
@@ -1789,7 +1821,7 @@ var Modal = function () {
 
 exports.default = Modal;
 
-},{"./swiper_setiing":9}],9:[function(require,module,exports){
+},{"./swiper_setiing":10}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1810,7 +1842,7 @@ exports.default = function () {
   });
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1978,7 +2010,7 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
   };
 }]); //APIのクラス
 
-},{"../components/loading":7,"../util/api":17,"./footer.controller":11,"./header.controller":12,"./main.controller":13,"./stabMain.controller":14}],11:[function(require,module,exports){
+},{"../components/loading":8,"../util/api":18,"./footer.controller":12,"./header.controller":13,"./main.controller":14,"./stabMain.controller":15}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1989,7 +2021,7 @@ Object.defineProperty(exports, "__esModule", {
 //--------------------------
 exports.default = angular.module('controllers.footer', []).controller('footerController', ['$scope', function ($scope) {}]);
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2027,7 +2059,7 @@ exports.default = angular.module('controllers.header', []).controller('headerCon
   };
 }]);
 
-},{"../util/animation":16}],13:[function(require,module,exports){
+},{"../util/animation":17}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2069,7 +2101,7 @@ exports.default = angular.module('controllers.main', []).controller('midControll
 }]); //本情報のクラス
 //APIのクラス
 
-},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":17}],14:[function(require,module,exports){
+},{"../components/book":7,"../components/loading":8,"../components/modal":9,"../util/api":18}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2147,7 +2179,7 @@ exports.default = angular.module('controllers.stabMain', []).controller('stabMid
 }]); //本情報のクラス
 //APIのクラス
 
-},{"../components/book":6,"../components/loading":7,"../components/modal":8,"../util/api":17}],15:[function(require,module,exports){
+},{"../components/book":7,"../components/loading":8,"../components/modal":9,"../util/api":18}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2173,7 +2205,7 @@ var ApiClass = function () {
    * @param {String} path - root以下のパス
    */
   function ApiClass() {
-    var path = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, ApiClass);
 
@@ -2195,7 +2227,7 @@ var ApiClass = function () {
     value: function post() {
       var _this = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.post START");
       if (!window.JSON) return null;
@@ -2218,7 +2250,7 @@ var ApiClass = function () {
     value: function get() {
       var _this2 = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.get START");
       if (!window.JSON) return null;
@@ -2257,7 +2289,7 @@ var ApiClass = function () {
 
 exports.default = ApiClass;
 
-},{"superagent":2}],16:[function(require,module,exports){
+},{"superagent":2}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2305,13 +2337,13 @@ function onScroll() {
  * @param {boolean=true} bool - 表示時:ture,非表示時:false
  */
 function onSideber() {
-  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+  var bool = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
   bool ? addFadein('#sideber') : addFadeout('#sideber');
   bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
 }
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2359,36 +2391,4 @@ function LoadRequestAPI($scope, path) {
   });
 } //APIのクラス
 
-},{"../components/loading":7,"../util/ApiClass":15}],18:[function(require,module,exports){
-'use strict';
-
-var _common = require('./controller/common');
-
-var _common2 = _interopRequireDefault(_common);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//----------------------------------------------------------------------
-// INITIALIZE
-//----------------------------------------------------------------------
-window.onload = function () {
-  console.log('Page Loaded');
-};
-
-//----------------------------------------------------------------------
-// コントローラ
-//----------------------------------------------------------------------
-//----------------------------------------------------------------------
-// INCLUDE
-//----------------------------------------------------------------------
-angular.module('main', [_common2.default.name]);
-
-/*********************************************************************
- * ## メモ ##
- * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！
- * 
- * 
- * 
- ********************************************************************/
-
-},{"./controller/common":10}]},{},[18]);
+},{"../components/loading":8,"../util/ApiClass":16}]},{},[6]);
