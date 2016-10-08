@@ -51,6 +51,7 @@ export default class ApiClass{
 
   /**
    * resolveのラップ
+   * @returns {Object} レスポンス
    */
   res(res){
     console.log('success');
@@ -59,6 +60,7 @@ export default class ApiClass{
 
   /**
    * resolveのラップ
+   * @returns {Object} エラー
    */
   rej(err){
     console.log('error');

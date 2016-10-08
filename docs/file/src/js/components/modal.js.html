@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/js/components/modal.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">js/components</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/js/components/book.js~Book.html">Book</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/js/components/loading.js~Loading.html">Loading</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/js/components/modal.js~Modal.html">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swiper_setiing">swiper_setiing</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">js/util</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/js/util/ApiClass.js~ApiClass.html">ApiClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFadein">addFadein</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addFadeout">addFadeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onScroll">onScroll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onSideber">onSideber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LoadRequestAPI">LoadRequestAPI</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/js/components/modal.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">//import
+import swiper_setiing from &apos;./swiper_setiing&apos;;
+
+/**
+ * &#x30E2;&#x30FC;&#x30C0;&#x30EB; &#x30AF;&#x30E9;&#x30B9;
+ * @param {Object} $scope
+ */
+export default class Modal{
+
+  /**
+   * &#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;
+   * @param {Object} $scope - &#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x306B;&#x3057;&#x305F;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;(&#x901A;&#x5E38;&#x306F;null&#x3067;&#x304A;&#x3063;&#x3051;&#x3067;&#x3059;&#x3002;)
+   */
+  constructor($scope=null){
+	console.log(&quot;Loading.constructor&quot;);
+
+	//&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x306E;set
+	const element = document.getElementById(&quot;content&quot;);
+	const scope = angular.element(element).scope();
+	this.$scope = $scope || scope;
+  }
+
+	/**
+	 * &#x30E2;&#x30FC;&#x30C0;&#x30EB;&#x306E;&#x8A2D;&#x5B9A;
+	 * @return {object} &#x8A2D;&#x5B9A;&#x5185;&#x5BB9;
+	 */
+	setting(){
+		console.log(&quot;modal_setting&quot;);
+		return{
+			dismissible: true, // Modal can be dismissed by clicking outside of the modal
+			opacity: .6, // Opacity of modal background
+			in_duration: 500, // Transition in duration
+			out_duration: 500, // Transition out duration
+			starting_top: &apos;0%&apos;, // Starting top style attribute
+			ending_top: &apos;0%&apos;, // Ending top style attribute
+			ready: () =&gt; { // Callback for Modal open
+				swiper_setiing()
+			}
+		}
+	}
+
+	/**
+	 * &#x30E2;&#x30FC;&#x30C0;&#x30EB;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;setter
+	 * @param {Object} book &#x672C;&#x7BA1;&#x7406;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;
+	 */
+	set(book={}){
+		console.log(&quot;modal.set&quot;);
+		this.$scope.modal_books = book;
+	}
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

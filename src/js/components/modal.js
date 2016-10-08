@@ -2,7 +2,7 @@
 import swiper_setiing from './swiper_setiing';
 
 /**
- * @class ローディングインジケーター クラス
+ * モーダル クラス
  * @param {Object} $scope
  */
 export default class Modal{
@@ -22,6 +22,7 @@ export default class Modal{
 
 	/**
 	 * モーダルの設定
+	 * @return {object} 設定内容
 	 */
 	setting(){
 		console.log("modal_setting");
@@ -40,6 +41,7 @@ export default class Modal{
 
 	/**
 	 * モーダルのオブジェクトのsetter
+	 * @param {Object} book 本管理クラスのオブジェクト
 	 */
 	set(book={}){
 		console.log("modal.set");
