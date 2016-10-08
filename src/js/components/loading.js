@@ -1,5 +1,5 @@
 /**
- * @class ローディングインジケーター クラス
+ * ローディングインジケーター クラス
  * @param {Object} $scope
  */
 export default class Loading{

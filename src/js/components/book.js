@@ -1,5 +1,5 @@
 /**
- * @class 本のクラスです。 
+ * 本管理クラス
  * @param {string} title - タイトル
  * @param {string} author - 著者
  * @param {string} price - 値段
@@ -8,7 +8,7 @@
 export default class Book{
 
   /**
-   * @constructor
+   * コンストラクタ
    * @param {Object} data - 本のオブジェクト
    */
   constructor(data={}){

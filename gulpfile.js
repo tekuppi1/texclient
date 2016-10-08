@@ -27,6 +27,7 @@ var pngquant = require('imagemin-pngquant'); // 画像圧縮
 var plumber = require('gulp-plumber'); // コンパイルエラーが出てもwatchを止めない
 var mock = require('easymock'); // モックサーバー
 var eslint = require('gulp-eslint'); //eslint処理
+var esdoc = require("gulp-esdoc"); //esdoc生成
 
 //モックサーバー（テスト用）
 gulp.task('easymock', function () {
@@ -65,6 +66,7 @@ gulp.task('webserver', function(){
       port: 8000,
     }));
 });
+
 
 // htmlをコンパイル
 gulp.task('html', function(){
@@ -114,6 +116,14 @@ gulp.task('imagemin', function(){
     }))
     .pipe(gulp.dest(path.imgBuildPath));
 });
+
+
+// esdoc生成
+gulp.task('esdoc', function(){
+  gulp.src("./src")
+    .pipe(esdoc({ destination: "./docs" }))
+});
+
 
 // ファイル変更監視
 gulp.task('watch', function() {

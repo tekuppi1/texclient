@@ -1,0 +1,1864 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "anime",
+            "range": [
+              12,
+              17
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 12
+              },
+              "end": {
+                "line": 1,
+                "column": 17
+              }
+            }
+          },
+          "range": [
+            7,
+            17
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 17
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "../util/animation",
+        "raw": "'../util/animation'",
+        "range": [
+          24,
+          43
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 24
+          },
+          "end": {
+            "line": 1,
+            "column": 43
+          }
+        }
+      },
+      "range": [
+        0,
+        44
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 44
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Line",
+          "value": "TODO: カテゴリ情報の集約地点を作成",
+          "range": [
+            46,
+            68
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 22
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "TODO: サイドバーのロジックの修正",
+          "range": [
+            70,
+            91
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 21
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "--------------------------",
+          "range": [
+            95,
+            123
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 28
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": " ヘッダーコンテンツ コントローラ",
+          "range": [
+            125,
+            144
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 6,
+              "column": 19
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "--------------------------",
+          "range": [
+            146,
+            174
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 28
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "angular",
+                "range": [
+                  191,
+                  198
+                ],
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 22
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "module",
+                "range": [
+                  199,
+                  205
+                ],
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 23
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 29
+                  }
+                }
+              },
+              "range": [
+                191,
+                205
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 15
+                },
+                "end": {
+                  "line": 8,
+                  "column": 29
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "controllers.header",
+                "raw": "'controllers.header'",
+                "range": [
+                  206,
+                  226
+                ],
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 30
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 50
+                  }
+                }
+              },
+              {
+                "type": "ArrayExpression",
+                "elements": [],
+                "range": [
+                  228,
+                  230
+                ],
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 52
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 54
+                  }
+                }
+              }
+            ],
+            "range": [
+              191,
+              231
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 15
+              },
+              "end": {
+                "line": 8,
+                "column": 55
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "controller",
+            "range": [
+              236,
+              246
+            ],
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 3
+              },
+              "end": {
+                "line": 9,
+                "column": 13
+              }
+            }
+          },
+          "range": [
+            191,
+            246
+          ],
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 15
+            },
+            "end": {
+              "line": 9,
+              "column": 13
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "headerController",
+            "raw": "'headerController'",
+            "range": [
+              247,
+              265
+            ],
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 14
+              },
+              "end": {
+                "line": 9,
+                "column": 32
+              }
+            }
+          },
+          {
+            "type": "ArrayExpression",
+            "elements": [
+              {
+                "type": "Literal",
+                "value": "$scope",
+                "raw": "'$scope'",
+                "range": [
+                  267,
+                  275
+                ],
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 34
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 42
+                  }
+                }
+              },
+              {
+                "type": "ArrowFunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "$scope",
+                    "range": [
+                      278,
+                      284
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 45
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 51
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$scope",
+                            "range": [
+                              315,
+                              321
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 12,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 12,
+                                "column": 10
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "onLoadHeader",
+                            "range": [
+                              322,
+                              334
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 12,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 12,
+                                "column": 23
+                              }
+                            }
+                          },
+                          "range": [
+                            315,
+                            334
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 12,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 12,
+                              "column": 23
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "ArrowFunctionExpression",
+                          "id": null,
+                          "params": [],
+                          "body": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "console",
+                                      "range": [
+                                        352,
+                                        359
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 13,
+                                          "column": 6
+                                        },
+                                        "end": {
+                                          "line": 13,
+                                          "column": 13
+                                        }
+                                      }
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "log",
+                                      "range": [
+                                        360,
+                                        363
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 13,
+                                          "column": 14
+                                        },
+                                        "end": {
+                                          "line": 13,
+                                          "column": 17
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      352,
+                                      363
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 13,
+                                        "column": 6
+                                      },
+                                      "end": {
+                                        "line": 13,
+                                        "column": 17
+                                      }
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "onLoadHeader",
+                                      "raw": "\"onLoadHeader\"",
+                                      "range": [
+                                        364,
+                                        378
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 13,
+                                          "column": 18
+                                        },
+                                        "end": {
+                                          "line": 13,
+                                          "column": 32
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "range": [
+                                    352,
+                                    379
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 13,
+                                      "column": 6
+                                    },
+                                    "end": {
+                                      "line": 13,
+                                      "column": 33
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  352,
+                                  380
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 6
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 34
+                                  }
+                                }
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "jQuery",
+                                        "range": [
+                                          390,
+                                          396
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 14,
+                                            "column": 8
+                                          },
+                                          "end": {
+                                            "line": 14,
+                                            "column": 14
+                                          }
+                                        }
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": ".carousel",
+                                          "raw": "'.carousel'",
+                                          "range": [
+                                            397,
+                                            408
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 14,
+                                              "column": 15
+                                            },
+                                            "end": {
+                                              "line": 14,
+                                              "column": 26
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "range": [
+                                        390,
+                                        409
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 14,
+                                          "column": 8
+                                        },
+                                        "end": {
+                                          "line": 14,
+                                          "column": 27
+                                        }
+                                      }
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "carousel",
+                                      "range": [
+                                        410,
+                                        418
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 14,
+                                          "column": 28
+                                        },
+                                        "end": {
+                                          "line": 14,
+                                          "column": 36
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      390,
+                                      418
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 14,
+                                        "column": 8
+                                      },
+                                      "end": {
+                                        "line": 14,
+                                        "column": 36
+                                      }
+                                    }
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    390,
+                                    420
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 14,
+                                      "column": 8
+                                    },
+                                    "end": {
+                                      "line": 14,
+                                      "column": 38
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  390,
+                                  421
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 14,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 14,
+                                    "column": 39
+                                  }
+                                }
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "jQuery",
+                                        "range": [
+                                          431,
+                                          437
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 8
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 14
+                                          }
+                                        }
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": ".carousel.carousel-slider",
+                                          "raw": "'.carousel.carousel-slider'",
+                                          "range": [
+                                            438,
+                                            465
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 15
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 42
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "range": [
+                                        431,
+                                        466
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 8
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 43
+                                        }
+                                      }
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "carousel",
+                                      "range": [
+                                        467,
+                                        475
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 44
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 52
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      431,
+                                      475
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 15,
+                                        "column": 8
+                                      },
+                                      "end": {
+                                        "line": 15,
+                                        "column": 52
+                                      }
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "ObjectExpression",
+                                      "properties": [
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "full_width",
+                                            "range": [
+                                              477,
+                                              487
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 54
+                                              },
+                                              "end": {
+                                                "line": 15,
+                                                "column": 64
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": true,
+                                            "raw": "true",
+                                            "range": [
+                                              489,
+                                              493
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 66
+                                              },
+                                              "end": {
+                                                "line": 15,
+                                                "column": 70
+                                              }
+                                            }
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false,
+                                          "computed": false,
+                                          "range": [
+                                            477,
+                                            493
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 54
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 70
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "range": [
+                                        476,
+                                        494
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 53
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 71
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "range": [
+                                    431,
+                                    495
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 8
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 72
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  431,
+                                  496
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 15,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 15,
+                                    "column": 73
+                                  }
+                                }
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "window",
+                                      "range": [
+                                        506,
+                                        512
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 16,
+                                          "column": 8
+                                        },
+                                        "end": {
+                                          "line": 16,
+                                          "column": 14
+                                        }
+                                      }
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "addEventListener",
+                                      "range": [
+                                        513,
+                                        529
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 16,
+                                          "column": 15
+                                        },
+                                        "end": {
+                                          "line": 16,
+                                          "column": 31
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      506,
+                                      529
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 16,
+                                        "column": 8
+                                      },
+                                      "end": {
+                                        "line": 16,
+                                        "column": 31
+                                      }
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "scroll",
+                                      "raw": "'scroll'",
+                                      "range": [
+                                        530,
+                                        538
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 16,
+                                          "column": 32
+                                        },
+                                        "end": {
+                                          "line": 16,
+                                          "column": 40
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "anime",
+                                        "range": [
+                                          540,
+                                          545
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 16,
+                                            "column": 42
+                                          },
+                                          "end": {
+                                            "line": 16,
+                                            "column": 47
+                                          }
+                                        }
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "onScroll",
+                                        "range": [
+                                          546,
+                                          554
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 16,
+                                            "column": 48
+                                          },
+                                          "end": {
+                                            "line": 16,
+                                            "column": 56
+                                          }
+                                        }
+                                      },
+                                      "range": [
+                                        540,
+                                        554
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 16,
+                                          "column": 42
+                                        },
+                                        "end": {
+                                          "line": 16,
+                                          "column": 56
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "Literal",
+                                      "value": false,
+                                      "raw": "false",
+                                      "range": [
+                                        556,
+                                        561
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 16,
+                                          "column": 58
+                                        },
+                                        "end": {
+                                          "line": 16,
+                                          "column": 63
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "range": [
+                                    506,
+                                    562
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 16,
+                                      "column": 8
+                                    },
+                                    "end": {
+                                      "line": 16,
+                                      "column": 64
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  506,
+                                  563
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 16,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 16,
+                                    "column": 65
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              343,
+                              570
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 12,
+                                "column": 32
+                              },
+                              "end": {
+                                "line": 17,
+                                "column": 5
+                              }
+                            }
+                          },
+                          "generator": false,
+                          "expression": false,
+                          "range": [
+                            337,
+                            570
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 12,
+                              "column": 26
+                            },
+                            "end": {
+                              "line": 17,
+                              "column": 5
+                            }
+                          }
+                        },
+                        "range": [
+                          315,
+                          570
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 12,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 17,
+                            "column": 5
+                          }
+                        },
+                        "trailingComments": [
+                          {
+                            "type": "Block",
+                            "value": "*\r\n     * サイドバーの表示\r\n     * @param {boolean} bool - true:表示,false:非表示\r\n     ",
+                            "range": [
+                              578,
+                              657
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 19,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 7
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "range": [
+                        315,
+                        663
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 4
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Line",
+                          "value": "ヘッダー初期描画時",
+                          "range": [
+                            298,
+                            309
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 11,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 11,
+                              "column": 15
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$scope",
+                            "range": [
+                              663,
+                              669
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 23,
+                                "column": 10
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "onSideber",
+                            "range": [
+                              670,
+                              679
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 23,
+                                "column": 20
+                              }
+                            }
+                          },
+                          "range": [
+                            663,
+                            679
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 23,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 23,
+                              "column": 20
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "ArrowFunctionExpression",
+                          "id": null,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "name": "bool",
+                              "range": [
+                                683,
+                                687
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 23,
+                                  "column": 24
+                                },
+                                "end": {
+                                  "line": 23,
+                                  "column": 28
+                                }
+                              }
+                            }
+                          ],
+                          "body": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "anime",
+                                      "range": [
+                                        694,
+                                        699
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 23,
+                                          "column": 35
+                                        },
+                                        "end": {
+                                          "line": 23,
+                                          "column": 40
+                                        }
+                                      }
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "onSideber",
+                                      "range": [
+                                        700,
+                                        709
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 23,
+                                          "column": 41
+                                        },
+                                        "end": {
+                                          "line": 23,
+                                          "column": 50
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      694,
+                                      709
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 23,
+                                        "column": 35
+                                      },
+                                      "end": {
+                                        "line": 23,
+                                        "column": 50
+                                      }
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Identifier",
+                                      "name": "bool",
+                                      "range": [
+                                        710,
+                                        714
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 23,
+                                          "column": 51
+                                        },
+                                        "end": {
+                                          "line": 23,
+                                          "column": 55
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "range": [
+                                    694,
+                                    715
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 23,
+                                      "column": 35
+                                    },
+                                    "end": {
+                                      "line": 23,
+                                      "column": 56
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  694,
+                                  716
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 23,
+                                    "column": 35
+                                  },
+                                  "end": {
+                                    "line": 23,
+                                    "column": 57
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              692,
+                              718
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 33
+                              },
+                              "end": {
+                                "line": 23,
+                                "column": 59
+                              }
+                            }
+                          },
+                          "generator": false,
+                          "expression": false,
+                          "range": [
+                            682,
+                            718
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 23,
+                              "column": 23
+                            },
+                            "end": {
+                              "line": 23,
+                              "column": 59
+                            }
+                          }
+                        },
+                        "range": [
+                          663,
+                          718
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 23,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 59
+                          }
+                        }
+                      },
+                      "range": [
+                        663,
+                        724
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 25,
+                          "column": 2
+                        }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Block",
+                          "value": "*\r\n     * サイドバーの表示\r\n     * @param {boolean} bool - true:表示,false:非表示\r\n     ",
+                          "range": [
+                            578,
+                            657
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 22,
+                              "column": 7
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "range": [
+                    289,
+                    725
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 56
+                    },
+                    "end": {
+                      "line": 25,
+                      "column": 3
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  277,
+                  725
+                ],
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 44
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 3
+                  }
+                }
+              }
+            ],
+            "range": [
+              266,
+              726
+            ],
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 33
+              },
+              "end": {
+                "line": 25,
+                "column": 4
+              }
+            }
+          }
+        ],
+        "range": [
+          191,
+          727
+        ],
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 15
+          },
+          "end": {
+            "line": 25,
+            "column": 5
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Line",
+            "value": "TODO: カテゴリ情報の集約地点を作成",
+            "range": [
+              46,
+              68
+            ],
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 22
+              }
+            }
+          },
+          {
+            "type": "Line",
+            "value": "TODO: サイドバーのロジックの修正",
+            "range": [
+              70,
+              91
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 3,
+                "column": 21
+              }
+            }
+          },
+          {
+            "type": "Line",
+            "value": "--------------------------",
+            "range": [
+              95,
+              123
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 0
+              },
+              "end": {
+                "line": 5,
+                "column": 28
+              }
+            }
+          },
+          {
+            "type": "Line",
+            "value": " ヘッダーコンテンツ コントローラ",
+            "range": [
+              125,
+              144
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 19
+              }
+            }
+          },
+          {
+            "type": "Line",
+            "value": "--------------------------",
+            "range": [
+              146,
+              174
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 28
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "range": [
+        176,
+        728
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 25,
+          "column": 6
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": "TODO: カテゴリ情報の集約地点を作成",
+          "range": [
+            46,
+            68
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 22
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "TODO: サイドバーのロジックの修正",
+          "range": [
+            70,
+            91
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 21
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "--------------------------",
+          "range": [
+            95,
+            123
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 28
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": " ヘッダーコンテンツ コントローラ",
+          "range": [
+            125,
+            144
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 6,
+              "column": 19
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "--------------------------",
+          "range": [
+            146,
+            174
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 28
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    728
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 25,
+      "column": 6
+    }
+  },
+  "comments": [
+    {
+      "type": "Line",
+      "value": "TODO: カテゴリ情報の集約地点を作成",
+      "range": [
+        46,
+        68
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "TODO: サイドバーのロジックの修正",
+      "range": [
+        70,
+        91
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "--------------------------",
+      "range": [
+        95,
+        123
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " ヘッダーコンテンツ コントローラ",
+      "range": [
+        125,
+        144
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "--------------------------",
+      "range": [
+        146,
+        174
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "ヘッダー初期描画時",
+      "range": [
+        298,
+        309
+      ],
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 4
+        },
+        "end": {
+          "line": 11,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\r\n     * サイドバーの表示\r\n     * @param {boolean} bool - true:表示,false:非表示\r\n     ",
+      "range": [
+        578,
+        657
+      ],
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 4
+        },
+        "end": {
+          "line": 22,
+          "column": 7
+        }
+      }
+    }
+  ]
+}

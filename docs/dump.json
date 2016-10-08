@@ -1,0 +1,1775 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/app.js",
+    "memberof": null,
+    "longname": "src/js/app.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "//----------------------------------------------------------------------\r\n// INCLUDE\r\n//----------------------------------------------------------------------\r\nimport mainController from './controller/common';\r\n\r\n\r\n//----------------------------------------------------------------------\r\n// INITIALIZE\r\n//----------------------------------------------------------------------\r\nwindow.onload = () => {\r\n  console.log('Page Loaded');\r\n};\r\n\r\n//----------------------------------------------------------------------\r\n// コントローラ\r\n//----------------------------------------------------------------------\r\nangular.module('main', [mainController.name]);\r\n\r\n\r\n/*********************************************************************\r\n * ## メモ ##\r\n * ng-includeは、onLoadModel後じゃないとクエリの発行はできないよ！\r\n * \r\n * \r\n * \r\n ********************************************************************/"
+  },
+  {
+    "__docId__": 1,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/components/book.js",
+    "memberof": null,
+    "longname": "src/js/components/book.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 8,
+    "content": "/**\r\n * 本管理クラス\r\n * @param {string} title - タイトル\r\n * @param {string} author - 著者\r\n * @param {string} price - 値段\r\n * @param {string} img - 画像URL\r\n */\r\nexport default class Book{\r\n\r\n  /**\r\n   * コンストラクタ\r\n   * @param {Object} data - 本のオブジェクト\r\n   */\r\n  constructor(data={}){\r\n    if(!data) console.log(\"Book read error\");\r\n    this.title  = data.title  || \"\";\r\n    this.author = data.author || \"\";\r\n    this.price  = data.price  || \"\";\r\n    this.img    = data.img    || \"\";\r\n  }\r\n\r\n  /**\r\n   * 本のsetter\r\n   * @param {Object} data - 本のオブジェクト\r\n   */\r\n  set(data=null){\r\n    if(!data){\r\n      console.log(\"Book set error\");\r\n      return;\r\n    }\r\n    this.title  = data.title  || this.title;\r\n    this.author = data.author || this.author;\r\n    this.price  = data.price  || this.price;\r\n    this.img    = data.img    || this.img;\r\n  }\r\n\r\n  /**\r\n   * 本のgetter\r\n   * @return {Object} 本のオブジェクト\r\n   */\r\n  get(){\r\n    return {\r\n      title:   this.title,\r\n      author:  this.author,\r\n      price:   this.price,\r\n      img:     this.img,\r\n    }\r\n  }\r\n\r\n}\r\n"
+  },
+  {
+    "__docId__": 2,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Book",
+    "memberof": "src/js/components/book.js",
+    "longname": "src/js/components/book.js~Book",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/components/book.js",
+    "importStyle": "Book",
+    "description": "本管理クラス",
+    "lineNumber": 8,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "title",
+        "description": "タイトル"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "author",
+        "description": "著者"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "値段"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "img",
+        "description": "画像URL"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 3,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#constructor",
+    "access": null,
+    "description": "コンストラクタ",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "本のオブジェクト"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 4,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "title",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#title",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "author",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#author",
+    "access": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "price",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#price",
+    "access": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "img",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#img",
+    "access": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "set",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#set",
+    "access": null,
+    "description": "本のsetter",
+    "lineNumber": 26,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "本のオブジェクト"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 9,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "title",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#title",
+    "access": null,
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "author",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#author",
+    "access": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "price",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#price",
+    "access": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "img",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#img",
+    "access": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "get",
+    "memberof": "src/js/components/book.js~Book",
+    "longname": "src/js/components/book.js~Book#get",
+    "access": null,
+    "description": "本のgetter",
+    "lineNumber": 41,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "本のオブジェクト"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/components/loading.js",
+    "memberof": null,
+    "longname": "src/js/components/loading.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "content": "/**\r\n * ローディングインジケーター クラス\r\n * @param {Object} $scope\r\n */\r\nexport default class Loading{\r\n\r\n  /**\r\n   * コンストラクタ\r\n   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)\r\n   */\r\n  constructor($scope=null){\r\n    console.log(\"Loading.constructor\");\r\n\r\n    //スコープのset\r\n    const element = document.getElementById(\"content\");\r\n    const scope = angular.element(element).scope();\r\n    this.$scope = $scope || scope;\r\n  }\r\n\r\n  /**\r\n   * インジケータを表示\r\n   */\r\n  show(){\r\n    console.log(\"Loading.show\");\r\n    this.$scope.loaderClass = \"loadshow\";\r\n  }\r\n\r\n  /**\r\n   * インジケータを非表示\r\n   */\r\n  hide(){\r\n    console.log(\"Loading.hide\");\r\n    this.$scope.loaderClass = \"loadhide\";\r\n  }\r\n\r\n}\r\n"
+  },
+  {
+    "__docId__": 15,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Loading",
+    "memberof": "src/js/components/loading.js",
+    "longname": "src/js/components/loading.js~Loading",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/components/loading.js",
+    "importStyle": "Loading",
+    "description": "ローディングインジケーター クラス",
+    "lineNumber": 5,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "$scope",
+        "description": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 16,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/js/components/loading.js~Loading",
+    "longname": "src/js/components/loading.js~Loading#constructor",
+    "access": null,
+    "description": "コンストラクタ",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "$scope",
+        "description": "スコープにしたいオブジェクト(通常はnullでおっけです。)"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 17,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "$scope",
+    "memberof": "src/js/components/loading.js~Loading",
+    "longname": "src/js/components/loading.js~Loading#$scope",
+    "access": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "show",
+    "memberof": "src/js/components/loading.js~Loading",
+    "longname": "src/js/components/loading.js~Loading#show",
+    "access": null,
+    "description": "インジケータを表示",
+    "lineNumber": 23,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 19,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "hide",
+    "memberof": "src/js/components/loading.js~Loading",
+    "longname": "src/js/components/loading.js~Loading#hide",
+    "access": null,
+    "description": "インジケータを非表示",
+    "lineNumber": 31,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 20,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/components/modal.js",
+    "memberof": null,
+    "longname": "src/js/components/modal.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "//import\r\nimport swiper_setiing from './swiper_setiing';\r\n\r\n/**\r\n * モーダル クラス\r\n * @param {Object} $scope\r\n */\r\nexport default class Modal{\r\n\r\n  /**\r\n   * コンストラクタ\r\n   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)\r\n   */\r\n  constructor($scope=null){\r\n\tconsole.log(\"Loading.constructor\");\r\n\r\n\t//スコープのset\r\n\tconst element = document.getElementById(\"content\");\r\n\tconst scope = angular.element(element).scope();\r\n\tthis.$scope = $scope || scope;\r\n  }\r\n\r\n\t/**\r\n\t * モーダルの設定\r\n\t * @return {object} 設定内容\r\n\t */\r\n\tsetting(){\r\n\t\tconsole.log(\"modal_setting\");\r\n\t\treturn{\r\n\t\t\tdismissible: true, // Modal can be dismissed by clicking outside of the modal\r\n\t\t\topacity: .6, // Opacity of modal background\r\n\t\t\tin_duration: 500, // Transition in duration\r\n\t\t\tout_duration: 500, // Transition out duration\r\n\t\t\tstarting_top: '0%', // Starting top style attribute\r\n\t\t\tending_top: '0%', // Ending top style attribute\r\n\t\t\tready: () => { // Callback for Modal open\r\n\t\t\t\tswiper_setiing()\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\t/**\r\n\t * モーダルのオブジェクトのsetter\r\n\t * @param {Object} book 本管理クラスのオブジェクト\r\n\t */\r\n\tset(book={}){\r\n\t\tconsole.log(\"modal.set\");\r\n\t\tthis.$scope.modal_books = book;\r\n\t}\r\n}\r\n"
+  },
+  {
+    "__docId__": 21,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Modal",
+    "memberof": "src/js/components/modal.js",
+    "longname": "src/js/components/modal.js~Modal",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/components/modal.js",
+    "importStyle": "Modal",
+    "description": "モーダル クラス",
+    "lineNumber": 8,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "$scope",
+        "description": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 22,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/js/components/modal.js~Modal",
+    "longname": "src/js/components/modal.js~Modal#constructor",
+    "access": null,
+    "description": "コンストラクタ",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "$scope",
+        "description": "スコープにしたいオブジェクト(通常はnullでおっけです。)"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 23,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "$scope",
+    "memberof": "src/js/components/modal.js~Modal",
+    "longname": "src/js/components/modal.js~Modal#$scope",
+    "access": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "setting",
+    "memberof": "src/js/components/modal.js~Modal",
+    "longname": "src/js/components/modal.js~Modal#setting",
+    "access": null,
+    "description": "モーダルの設定",
+    "lineNumber": 27,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "設定内容"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 25,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "set",
+    "memberof": "src/js/components/modal.js~Modal",
+    "longname": "src/js/components/modal.js~Modal#set",
+    "access": null,
+    "description": "モーダルのオブジェクトのsetter",
+    "lineNumber": 46,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "book",
+        "description": "本管理クラスのオブジェクト"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 26,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/components/swiper_setiing.js",
+    "memberof": null,
+    "longname": "src/js/components/swiper_setiing.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "/**\r\n * swiperの設定\r\n */\r\nexport default function (){\r\n  console.log(\"swiper_setiing\");\r\n  new Swiper('.swiper-container', {\r\n    pagination: '.swiper-pagination',\r\n    nextButton: '.swiper-button-next',\r\n    prevButton: '.swiper-button-prev',\r\n    slidesPerView: 1,\r\n    paginationClickable: true,\r\n    spaceBetween: 30,\r\n    grabCursor: true,\r\n    loop: true,\r\n  });\r\n}"
+  },
+  {
+    "__docId__": 27,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "swiper_setiing",
+    "memberof": "src/js/components/swiper_setiing.js",
+    "longname": "src/js/components/swiper_setiing.js~swiper_setiing",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/components/swiper_setiing.js",
+    "importStyle": "swiper_setiing",
+    "description": "swiperの設定",
+    "lineNumber": 4,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 28,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/controller/common.js",
+    "memberof": null,
+    "longname": "src/js/controller/common.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "// INCLUDE\r\nimport LoadRequestAPI from '../util/api'; //APIのクラス\r\nimport header from './header.controller';\r\nimport stabMain from './stabMain.controller';\r\nimport main from './main.controller';\r\nimport footer from './footer.controller';\r\nimport Loading from '../components/loading';\r\n\r\n/**----------------------------------------------------------------------\r\n * グローバル コントローラ\r\n *----------------------------------------------------------------------*/\r\nexport default angular.module('mainApp.controller', [\r\n  header.name,\r\n  stabMain.name,\r\n  main.name,\r\n  footer.name\r\n])\r\n  .controller('mainController', ['$scope', ($scope) => {\r\n    console.log(\"mainController\");\r\n    const loading = new Loading();\r\n    loading.show();\r\n    $scope.hideIndicator = ()=>{loading.hide()};\r\n\r\n    $scope.parents = [{id: 1,name:\"南山大学\",},{id: 2,name:\"名古屋大学\",},{id: 3,name:\"その他\",}];\r\n    $scope.categories = [\r\n      {id: 1,parent: 1,name:\"nanzan-1\",},\r\n      {id: 2,parent: 1,name:\"nanzan-2\",},\r\n      {id: 3,parent: 1,name:\"nanzan-3\",},\r\n      {id: 4,parent: 2,name:\"meidai-1\",},\r\n      {id: 5,parent: 2,name:\"meidai-2\",},\r\n      {id: 6,parent: 3,name:\"other-1\",},\r\n    ];\r\n    $scope.books = [\r\n      {\r\n        id: 1,\r\n        category: 1,\r\n        title: \"民法〈2〉物権・担保物権 (ファンダメンタル法学講座)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg\",\r\n        author: \"nanzan-1\",\r\n        point: 2,\r\n        amazon: 3672,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 2,\r\n        category: 1,\r\n        title: \"TOEIC(R) テスト BEYOND 990 超上級リーディング 7つのコアスキル\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51q6IJjNfbL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 3,\r\n        category: 2,\r\n        title: \"微分\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/4133qr1x9rL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 4,\r\n        category: 2,\r\n        title: \"新TOEIC TEST サラリーマン特急 満点リーディング\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51YCHjbcDeL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 5,\r\n        category: 3,\r\n        title: \"長考力 1000手先を読む技術 (幻冬舎新書)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/31p9ELA9OEL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 6,\r\n        category: 3,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 7,\r\n        category: 4,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 8,\r\n        category: 1,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 9,\r\n        category: 1,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 10,\r\n        category: 1,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      },{\r\n        id: 11,\r\n        category: 6,\r\n        title: \"プロ合格の原動力! 今泉の勝てる中飛車 (マイナビ将棋BOOKS)\",\r\n        img: \"http://beak.sakura.ne.jp/texchg_test3/wp-content/uploads/2015/11/51Fc5lO7kmL._SL160_.jpg\",\r\n        author: \"テッド寺倉\",\r\n        point: 2,\r\n        amazon: 2484,\r\n        count: 1,\r\n        description: \"\",\r\n      }\r\n    ];\r\n\r\n    /**\r\n     * APIリクエスト用のメソッド\r\n     * @param {String} path - APIのパス名\r\n     */\r\n    $scope.onLoadRequestAPI = (path) => {\r\n      LoadRequestAPI($scope,path);\r\n    }\r\n  }]);"
+  },
+  {
+    "__docId__": 29,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/controller/footer.controller.js",
+    "memberof": null,
+    "longname": "src/js/controller/footer.controller.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "//--------------------------\r\n// フッターコンテンツ コントローラ\r\n//--------------------------\r\nexport default angular.module('controllers.footer', [])\r\n  .controller('footerController',['$scope', ($scope) => {\r\n\r\n  }]);"
+  },
+  {
+    "__docId__": 30,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/controller/header.controller.js",
+    "memberof": null,
+    "longname": "src/js/controller/header.controller.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import * as anime  from '../util/animation';\r\n//TODO: カテゴリ情報の集約地点を作成\r\n//TODO: サイドバーのロジックの修正\r\n\r\n//--------------------------\r\n// ヘッダーコンテンツ コントローラ\r\n//--------------------------\r\nexport default angular.module('controllers.header', [])\r\n  .controller('headerController',['$scope', ($scope) => {\r\n\r\n    //ヘッダー初期描画時\r\n    $scope.onLoadHeader = () => {\r\n      console.log(\"onLoadHeader\");\r\n        jQuery('.carousel').carousel();\r\n        jQuery('.carousel.carousel-slider').carousel({full_width: true});\r\n        window.addEventListener('scroll', anime.onScroll, false);\r\n    }\r\n\r\n    /**\r\n     * サイドバーの表示\r\n     * @param {boolean} bool - true:表示,false:非表示\r\n     */\r\n    $scope.onSideber = (bool) => { anime.onSideber(bool); }\r\n\r\n  }]);"
+  },
+  {
+    "__docId__": 31,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/controller/main.controller.js",
+    "memberof": null,
+    "longname": "src/js/controller/main.controller.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "// INCLUDE\r\nimport ApiClass from '../util/api'; //APIのクラス\r\nimport Loading from '../components/loading'; //ローディングインジケータのクラス\r\nimport Book from '../components/book'; //本情報のクラス\r\nimport Modal from '../components/modal';\r\n\r\n//--------------------------\r\n// メインコンテンツ コントローラ\r\n//--------------------------\r\nexport default angular.module('controllers.main', [])\r\n  .controller('midController',['$scope', ($scope) => {\r\n    console.log(\"controllers.main\");\r\n    const loading = new Loading();\r\n    const modal = new Modal();\r\n\r\n    //メイン初期描画時\r\n    $scope.onLoadMid = () => {\r\n      console.log(\"onLoadMid\");\r\n    }\r\n\r\n  }]);"
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/controller/stabMain.controller.js",
+    "memberof": null,
+    "longname": "src/js/controller/stabMain.controller.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "// INCLUDE\r\nimport ApiClass from '../util/api'; //APIのクラス\r\nimport Loading from '../components/loading'; //ローディングインジケータのクラス\r\nimport Book from '../components/book'; //本情報のクラス\r\nimport Modal from '../components/modal';\r\n\r\n//--------------------------\r\n// メインコンテンツ コントローラ\r\n//--------------------------\r\nexport default angular.module('controllers.stabMain', [])\r\n  .controller('stabMidController',['$scope', ($scope) => {\r\n    console.log(\"controllers.stabMain\");\r\n    const sampleApi = new ApiClass(\"sample\");\r\n    const loading = new Loading();\r\n    const modal = new Modal();\r\n\r\n    //メイン初期描画時\r\n    $scope.onLoadStabMid = () => {\r\n      console.log(\"onLoadMid\");\r\n      //jQuery('.modal-trigger').leanModal(modal.setting());\r\n    }\r\n\r\n    // APIレスポンス表示ボタン\r\n    $scope.onLoadRequestAPI = () => {\r\n      console.log(\"onLoadRequestAPI\");\r\n      loading.show();\r\n\r\n      // APIリクエスト(Thenでres|errorを受け取ってください。)\r\n      sampleApi.post().then(\r\n        (res) => {\r\n          console.log(\"API OK!\");\r\n          console.log(res.books);\r\n          $scope.serch_count = res.search_count;\r\n          $scope.books = res.books;\r\n          loading.hide();\r\n          $scope.$apply(); //画面更新\r\n        },(error) => {\r\n          console.log(\"API NG!\");\r\n          loading.hide();\r\n          $scope.$apply(); //画面更新\r\n        }\r\n      );\r\n    }\r\n\r\n    // 予約のモーダル表示\r\n    $scope.pushReservation = (obj) => {\r\n      console.log(\"pushReservation\");\r\n      console.log(obj);\r\n      const book = new Book({\r\n        title:  obj.book_title,\r\n        author: obj.book_author,\r\n        price:  obj.book_price,\r\n        img:    obj.book_img,\r\n      });\r\n      modal.set({book});\r\n      $('#modal1').openModal();\r\n    }\r\n\r\n  }]);"
+  },
+  {
+    "__docId__": 33,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/util/animation.js",
+    "memberof": null,
+    "longname": "src/js/util/animation.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 9,
+    "content": "//--------------------------\r\n// アニメーションメソッド\r\n//--------------------------\r\n\r\n/**\r\n * フェードインクラスの付加\r\n * @param {string} name - 適用するタグ名\r\n */\r\nexport function addFadein(name){\r\n  $(name).addClass(\"fadein\");\r\n  $(name).removeClass(\"fadeout\");\r\n}\r\n/**\r\n * フェードインクラスの付加\r\n * @param {string} name - 適用するタグ名\r\n */\r\nexport function addFadeout(name){\r\n  $(name).addClass(\"fadeout\");\r\n  $(name).removeClass(\"fadein\");\r\n}\r\n//---------------------------------------------------------------------------------\r\n/**\r\n * スクロールのトップバー表示\r\n */\r\nexport function onScroll() {\r\n  let scrollTop = $(window).scrollTop();\r\n  if(scrollTop < 50){\r\n    jQuery('ul.tabs').tabs(); //このロジックいまいち（エラー吐くでな）\r\n    jQuery('.modal-trigger').leanModal();\r\n  }\r\n  (!$('#sideber').hasClass(\"fadein\") && scrollTop > 90) ? addFadein('.navbar-fixed-top') : addFadeout('.navbar-fixed-top');\r\n}\r\n\r\n/**\r\n * スクロールのサイドバー表示\r\n * @param {boolean=true} bool - 表示時:ture,非表示時:false\r\n */\r\nexport function onSideber(bool=true) {\r\n  bool ? addFadein('#sideber') : addFadeout('#sideber');\r\n  bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');\r\n}\r\n\r\n\r\n\r\n\r\n"
+  },
+  {
+    "__docId__": 34,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "addFadein",
+    "memberof": "src/js/util/animation.js",
+    "longname": "src/js/util/animation.js~addFadein",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/animation.js",
+    "importStyle": "{addFadein}",
+    "description": "フェードインクラスの付加",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "適用するタグ名"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 35,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "addFadeout",
+    "memberof": "src/js/util/animation.js",
+    "longname": "src/js/util/animation.js~addFadeout",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/animation.js",
+    "importStyle": "{addFadeout}",
+    "description": "フェードインクラスの付加",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "適用するタグ名"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 36,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "onScroll",
+    "memberof": "src/js/util/animation.js",
+    "longname": "src/js/util/animation.js~onScroll",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/animation.js",
+    "importStyle": "{onScroll}",
+    "description": "スクロールのトップバー表示",
+    "lineNumber": 25,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 37,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "onSideber",
+    "memberof": "src/js/util/animation.js",
+    "longname": "src/js/util/animation.js~onSideber",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/animation.js",
+    "importStyle": "{onSideber}",
+    "description": "スクロールのサイドバー表示",
+    "lineNumber": 38,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean=true"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bool",
+        "description": "表示時:ture,非表示時:false"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 38,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/util/api.js",
+    "memberof": null,
+    "longname": "src/js/util/api.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "// INCLUDE\r\nimport ApiClass from '../util/ApiClass'; //APIのクラス\r\nimport Loading from '../components/loading';\r\n\r\n/**\r\n * API通信用\r\n * @param {Object} $scope - スコープ\r\n * @param {String} path - root以下のパス\r\n */\r\nexport default function LoadRequestAPI($scope,path){\r\n  console.log(\"onLoadRequestAPI\");\r\n  const api = new ApiClass(path);\r\n  const loading = new Loading();\r\n  loading.show();\r\n\r\n  // APIリクエスト(Thenでres|errorを受け取ってください。)\r\n  api.post().then(\r\n    (res) => {\r\n      console.log(\"API OK!\");\r\n      console.log(res.books);\r\n      $scope.parents = res.parents;\r\n      $scope.categories = res.categories;\r\n      $scope.books = res.books;\r\n      loading.hide();\r\n      $scope.$apply(); //画面更新\r\n      jQuery('ul.tabs').tabs(); //描画後にtabにアニメーションを適用してね！\r\n      jQuery('.modal-trigger').leanModal(); //描画後にモーダルのアニメーションを適用してね！\r\n    },(error) => {\r\n      console.log(\"API NG!\");\r\n      loading.hide();\r\n      $scope.$apply(); //画面更新\r\n    }\r\n  );\r\n}\r\n"
+  },
+  {
+    "__docId__": 39,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "LoadRequestAPI",
+    "memberof": "src/js/util/api.js",
+    "longname": "src/js/util/api.js~LoadRequestAPI",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/api.js",
+    "importStyle": "LoadRequestAPI",
+    "description": "API通信用",
+    "lineNumber": 10,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "$scope",
+        "description": "スコープ"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "root以下のパス"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/js/util/ApiClass.js",
+    "memberof": null,
+    "longname": "src/js/util/ApiClass.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "// INCLUDE\r\nlet request = require('superagent');\r\n\r\n/**\r\n * @class API通信クラス\r\n * @param {String} path - root以下のパス\r\n */\r\nexport default class ApiClass{\r\n\r\n  /**\r\n   * コンストラクタ\r\n   * @param {String} path - root以下のパス\r\n   */\r\n  constructor(path = null){\r\n    console.log(\"ApiClass.constructor START\");\r\n    if(!path) console.log(\"apiパスが不足しています\");\r\n    this.path = 'mock/' + path; //モックにpath通し\r\n  }\r\n\r\n  /**\r\n   * POSTを行うメソッド\r\n   * @param {Object} send - リクエストパラメータ\r\n   * @return {Object} resolve - レスポンスデータ\r\n   * @return {Object} reject - エラーオブジェクト\r\n   */\r\n  post(send = null){\r\n    console.log(\"ApiClass.post START\");\r\n    if( !window.JSON ) return null;\r\n    return new Promise((resolve, reject) => {\r\n      request.post(this.path).send(send).end(\r\n        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}\r\n      )\r\n    });\r\n  }\r\n\r\n  /**\r\n   * GETを行うメソッド\r\n   * @param {Object} send - リクエストパラメータ\r\n   * @return {Object} resolve - レスポンスデータ\r\n   * @throws {Object} reject - エラーオブジェクト\r\n   */\r\n  get(send = null){\r\n    console.log(\"ApiClass.get START\");\r\n    if( !window.JSON ) return null;\r\n    return new Promise((resolve, reject) => {\r\n      request.get(this.path).send(send).end(\r\n        (err, res) => { res.ok ? resolve(this.res(res)) : reject(this.rej(err))}\r\n      )\r\n    });\r\n  }\r\n\r\n  /**\r\n   * resolveのラップ\r\n   * @returns {Object} レスポンス\r\n   */\r\n  res(res){\r\n    console.log('success');\r\n    return res.body;\r\n  }\r\n\r\n  /**\r\n   * resolveのラップ\r\n   * @returns {Object} エラー\r\n   */\r\n  rej(err){\r\n    console.log('error');\r\n    return err;\r\n  }\r\n\r\n}\r\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "request",
+    "memberof": "src/js/util/ApiClass.js",
+    "longname": "src/js/util/ApiClass.js~request",
+    "access": null,
+    "export": false,
+    "importPath": "sample/src/js/util/ApiClass.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 42,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "ApiClass",
+    "memberof": "src/js/util/ApiClass.js",
+    "longname": "src/js/util/ApiClass.js~ApiClass",
+    "access": null,
+    "export": true,
+    "importPath": "sample/src/js/util/ApiClass.js",
+    "importStyle": "ApiClass",
+    "description": "",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "API通信クラス"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "root以下のパス"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 43,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#constructor",
+    "access": null,
+    "description": "コンストラクタ",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "root以下のパス"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 44,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "path",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#path",
+    "access": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 45,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "post",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#post",
+    "access": null,
+    "description": "POSTを行うメソッド",
+    "lineNumber": 26,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "send",
+        "description": "リクエストパラメータ"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "reject - エラーオブジェクト"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 46,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "get",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#get",
+    "access": null,
+    "description": "GETを行うメソッド",
+    "lineNumber": 42,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "send",
+        "description": "リクエストパラメータ"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "resolve - レスポンスデータ"
+    },
+    "throws": [
+      {
+        "types": [
+          "Object"
+        ],
+        "description": "reject - エラーオブジェクト"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 47,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "res",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#res",
+    "access": null,
+    "description": "resolveのラップ",
+    "lineNumber": 56,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} レスポンス"
+      }
+    ],
+    "params": [
+      {
+        "name": "res",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "レスポンス"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 48,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "rej",
+    "memberof": "src/js/util/ApiClass.js~ApiClass",
+    "longname": "src/js/util/ApiClass.js~ApiClass#rej",
+    "access": null,
+    "description": "resolveのラップ",
+    "lineNumber": 65,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} エラー"
+      }
+    ],
+    "params": [
+      {
+        "name": "err",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "エラー"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  }
+]

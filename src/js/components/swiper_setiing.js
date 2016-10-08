@@ -1,4 +1,6 @@
-//swiperの設定
+/**
+ * swiperの設定
+ */
 export default function (){
   console.log("swiper_setiing");
   new Swiper('.swiper-container', {
