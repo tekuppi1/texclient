@@ -151,4 +151,17 @@ export default angular.module('mainApp.controller', [
     $scope.onLoadRequestAPI = (path) => {
       LoadRequestAPI($scope,path);
     }
+
+    /**
+     * 名前のフィルター
+     */
+    $scope.searchInput = "";
+    $scope.changedInput = () => {
+      console.log("watch!!");
+      console.log("検索文字：" + $scope.searchInput);
+      _.filter($scope.books,(book) => {
+        console.log(book.title);
+        return book.title.match(new RegExp($scope.searchInput));
+      });
+    }
   }]);

@@ -22,7 +22,8 @@
 <nav class="transparent teku-fixed original"><div class="nav-wrapper"><div class="container">
   <form>
     <div class="input-field before-black">
-      <input placeholder="欲しい本を探す..." id="search" type="search"><label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i>
+      <input placeholder="欲しい本を探す..." id="search" type="search" ng-model="searchInput" ng-change="changedInput()">
+        <label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i>
     </div>
   </form>
 </div></div></nav>

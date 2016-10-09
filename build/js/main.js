@@ -1576,7 +1576,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * @class 本のクラスです。 
+ * 本管理クラス
  * @param {string} title - タイトル
  * @param {string} author - 著者
  * @param {string} price - 値段
@@ -1585,11 +1585,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Book = function () {
 
   /**
-   * @constructor
+   * コンストラクタ
    * @param {Object} data - 本のオブジェクト
    */
   function Book() {
-    var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     _classCallCheck(this, Book);
 
@@ -1609,7 +1609,7 @@ var Book = function () {
   _createClass(Book, [{
     key: "set",
     value: function set() {
-      var data = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       if (!data) {
         console.log("Book set error");
@@ -1655,7 +1655,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * @class ローディングインジケーター クラス
+ * ローディングインジケーター クラス
  * @param {Object} $scope
  */
 var Loading = function () {
@@ -1665,7 +1665,7 @@ var Loading = function () {
    * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
    */
   function Loading() {
-    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, Loading);
 
@@ -1725,7 +1725,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * @class ローディングインジケーター クラス
+ * モーダル クラス
  * @param {Object} $scope
  */
 var Modal = function () {
@@ -1735,7 +1735,7 @@ var Modal = function () {
   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
   */
 	function Modal() {
-		var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
 		_classCallCheck(this, Modal);
 
@@ -1749,6 +1749,7 @@ var Modal = function () {
 
 	/**
   * モーダルの設定
+  * @return {object} 設定内容
   */
 
 
@@ -1772,12 +1773,13 @@ var Modal = function () {
 
 		/**
    * モーダルのオブジェクトのsetter
+   * @param {Object} book 本管理クラスのオブジェクト
    */
 
 	}, {
 		key: "set",
 		value: function set() {
-			var book = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+			var book = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 			console.log("modal.set");
 			this.$scope.modal_books = book;
@@ -1976,6 +1978,19 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
   $scope.onLoadRequestAPI = function (path) {
     (0, _api2.default)($scope, path);
   };
+
+  /**
+   * 名前のフィルター
+   */
+  $scope.searchInput = "";
+  $scope.changedInput = function () {
+    console.log("watch!!");
+    console.log("検索文字：" + $scope.searchInput);
+    _.filter($scope.books, function (book) {
+      console.log(book.title);
+      return book.title.match(new RegExp($scope.searchInput));
+    });
+  };
 }]); //APIのクラス
 
 },{"../components/loading":7,"../util/api":17,"./footer.controller":11,"./header.controller":12,"./main.controller":13,"./stabMain.controller":14}],11:[function(require,module,exports){
@@ -2173,7 +2188,7 @@ var ApiClass = function () {
    * @param {String} path - root以下のパス
    */
   function ApiClass() {
-    var path = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, ApiClass);
 
@@ -2195,7 +2210,7 @@ var ApiClass = function () {
     value: function post() {
       var _this = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.post START");
       if (!window.JSON) return null;
@@ -2218,7 +2233,7 @@ var ApiClass = function () {
     value: function get() {
       var _this2 = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.get START");
       if (!window.JSON) return null;
@@ -2231,6 +2246,7 @@ var ApiClass = function () {
 
     /**
      * resolveのラップ
+     * @returns {Object} レスポンス
      */
 
   }, {
@@ -2242,6 +2258,7 @@ var ApiClass = function () {
 
     /**
      * resolveのラップ
+     * @returns {Object} エラー
      */
 
   }, {
@@ -2305,7 +2322,7 @@ function onScroll() {
  * @param {boolean=true} bool - 表示時:ture,非表示時:false
  */
 function onSideber() {
-  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+  var bool = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
   bool ? addFadein('#sideber') : addFadeout('#sideber');
   bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
