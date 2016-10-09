@@ -55,9 +55,9 @@ import main from &apos;./main.controller&apos;;
 import footer from &apos;./footer.controller&apos;;
 import Loading from &apos;../components/loading&apos;;
 
-/**----------------------------------------------------------------------
- * &#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB; &#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;
- *----------------------------------------------------------------------*/
+//----------------------------------------------------------------------
+// &#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB; &#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;
+//----------------------------------------------------------------------
 export default angular.module(&apos;mainApp.controller&apos;, [
   header.name,
   stabMain.name,
@@ -199,6 +199,20 @@ export default angular.module(&apos;mainApp.controller&apos;, [
      */
     $scope.onLoadRequestAPI = (path) =&gt; {
       LoadRequestAPI($scope,path);
+    }
+
+    /**
+     * &#x540D;&#x524D;&#x306E;&#x30D5;&#x30A3;&#x30EB;&#x30BF;&#x30FC;
+     * @param {Stinr} input - &#x691C;&#x7D22;&#x3059;&#x308B;&#x6587;&#x5B57;
+     */
+    $scope.searchInput = &quot;&quot;;
+    $scope.searchResult = [];
+    $scope.changedInput = (input) =&gt; {
+      if(!input){ $scope.searchResult = []; return; }
+      $scope.searchResult = _.filter($scope.books,(book) =&gt; {
+        return book.title.match(new RegExp(input));
+      });
+      //_.each($scope.searchResult, (el) =&gt;{ console.log(el.title); });
     }
   }]);</code></pre>
 

@@ -1981,15 +1981,18 @@ exports.default = angular.module('mainApp.controller', [_header2.default.name, _
 
   /**
    * 名前のフィルター
+   * @param {Stinr} input - 検索する文字
    */
   $scope.searchInput = "";
-  $scope.changedInput = function () {
-    console.log("watch!!");
-    console.log("検索文字：" + $scope.searchInput);
-    _.filter($scope.books, function (book) {
-      console.log(book.title);
-      return book.title.match(new RegExp($scope.searchInput));
+  $scope.searchResult = [];
+  $scope.changedInput = function (input) {
+    if (!input) {
+      $scope.searchResult = [];return;
+    }
+    $scope.searchResult = _.filter($scope.books, function (book) {
+      return book.title.match(new RegExp(input));
     });
+    //_.each($scope.searchResult, (el) =>{ console.log(el.title); });
   };
 }]); //APIのクラス
 

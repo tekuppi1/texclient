@@ -154,14 +154,15 @@ export default angular.module('mainApp.controller', [
 
     /**
      * 名前のフィルター
+     * @param {Stinr} input - 検索する文字
      */
     $scope.searchInput = "";
-    $scope.changedInput = () => {
-      console.log("watch!!");
-      console.log("検索文字：" + $scope.searchInput);
-      _.filter($scope.books,(book) => {
-        console.log(book.title);
-        return book.title.match(new RegExp($scope.searchInput));
+    $scope.searchResult = [];
+    $scope.changedInput = (input) => {
+      if(!input){ $scope.searchResult = []; return; }
+      $scope.searchResult = _.filter($scope.books,(book) => {
+        return book.title.match(new RegExp(input));
       });
+      //_.each($scope.searchResult, (el) =>{ console.log(el.title); });
     }
   }]);
