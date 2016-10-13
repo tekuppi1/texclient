@@ -48,7 +48,6 @@ nav .container {
 // トップナビゲーションバー(検索バー)
 .navbar-fixed-top {
 	position: fixed;
-  z-index: 900;
   padding: 0px 0;
   background: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.05);
@@ -88,13 +87,11 @@ nav .container {
 .button-collapse {
 	position: absolute;
 	top: 0px;
-	z-index: 2500;
 }
 //------------------------------------------------------
 // サイドバー
 .sideber {
 	width: 250px;
-	z-index: 3000;
 	transform: translateX(-100%);
 	box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.6), 2px 0 20px 0 rgba(40,40,40, 0.2);
 	.divider{
@@ -129,7 +126,6 @@ nav .container {
 	background-color: #000;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 2400;
 	&.fadein {
 		animation-duration: 0.5s;
 		animation-name: sideSlideOverlayin;
