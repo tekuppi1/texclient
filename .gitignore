@@ -1,5 +1,5 @@
-node_modules
-.sass-cache
-vscode
+build/
+node_modules/
 .vscode/
+.sass-cache
 access_logs.db
