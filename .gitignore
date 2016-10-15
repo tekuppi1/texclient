@@ -1,5 +1,6 @@
 node_modules/
 docs/
+build/
 .sass-cache/
 .vscode/
 access_logs.db
