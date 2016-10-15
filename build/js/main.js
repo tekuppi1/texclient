@@ -1589,7 +1589,7 @@ var Book = function () {
    * @param {Object} data - 本のオブジェクト
    */
   function Book() {
-    var data = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     _classCallCheck(this, Book);
 
@@ -1609,7 +1609,7 @@ var Book = function () {
   _createClass(Book, [{
     key: "set",
     value: function set() {
-      var data = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       if (!data) {
         console.log("Book set error");
@@ -1665,7 +1665,7 @@ var Loading = function () {
    * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
    */
   function Loading() {
-    var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, Loading);
 
@@ -1735,7 +1735,7 @@ var Modal = function () {
   * @param {Object} $scope - スコープにしたいオブジェクト(通常はnullでおっけです。)
   */
 	function Modal() {
-		var $scope = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var $scope = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
 		_classCallCheck(this, Modal);
 
@@ -1777,7 +1777,7 @@ var Modal = function () {
 	}, {
 		key: "set",
 		value: function set() {
-			var book = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+			var book = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 			console.log("modal.set");
 			this.$scope.modal_books = book;
@@ -2173,7 +2173,7 @@ var ApiClass = function () {
    * @param {String} path - root以下のパス
    */
   function ApiClass() {
-    var path = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
     _classCallCheck(this, ApiClass);
 
@@ -2195,7 +2195,7 @@ var ApiClass = function () {
     value: function post() {
       var _this = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.post START");
       if (!window.JSON) return null;
@@ -2218,7 +2218,7 @@ var ApiClass = function () {
     value: function get() {
       var _this2 = this;
 
-      var send = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+      var send = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
       console.log("ApiClass.get START");
       if (!window.JSON) return null;
@@ -2305,7 +2305,7 @@ function onScroll() {
  * @param {boolean=true} bool - 表示時:ture,非表示時:false
  */
 function onSideber() {
-  var bool = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+  var bool = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
   bool ? addFadein('#sideber') : addFadeout('#sideber');
   bool ? addFadein('#sideber-overlay') : addFadeout('#sideber-overlay');
