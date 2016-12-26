@@ -1,4 +1,4 @@
-{
+export const sample_post = {
   "search_count": 100,
   "books": [
     {
@@ -32,4 +32,4 @@
       "book_img": "5.jpg"
     }
   ]
-}
+};

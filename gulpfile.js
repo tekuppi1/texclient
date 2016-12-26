@@ -25,7 +25,6 @@ var webserver = require('gulp-webserver'); // ローカルサーバ起動
 var imagemin = require('gulp-imagemin'); // 画像圧縮
 var pngquant = require('imagemin-pngquant'); // 画像圧縮
 var plumber = require('gulp-plumber'); // コンパイルエラーが出てもwatchを止めない
-var mock = require('easymock'); // モックサーバー
 var eslint = require('gulp-eslint'); //eslint処理
 
 //モックサーバー（テスト用）
