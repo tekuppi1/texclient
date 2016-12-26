@@ -1,5 +1,6 @@
 // INCLUDE
 import ApiClass from '../util/ApiClass'; //APIのクラス
+import MockApiClass from '../util/MockApiClass'; //APIのクラス
 import Loading from '../components/loading';
 
 /**
@@ -10,11 +11,14 @@ import Loading from '../components/loading';
 export default function LoadRequestAPI($scope,path){
   console.log("onLoadRequestAPI");
   const api = new ApiClass(path);
+  const mock = new MockApiClass(path);
   const loading = new Loading();
   loading.show();
 
+  // Mockリクエスト
+  return mock.post().then(
   // APIリクエスト(Thenでres|errorを受け取ってください。)
-  api.post().then(
+  //return api.post().then(
     (res) => {
       console.log("API OK!");
       console.log(res.books);
