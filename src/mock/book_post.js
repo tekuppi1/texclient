@@ -1,4 +1,4 @@
-{
+export const book_post = {
   "parents": [
     {"id": "1","name":"南山大学"},
     {"id": "2","name":"名古屋大学"},
@@ -125,4 +125,4 @@
 			"count": "1",
 			"description": ""
 		}]
-}
+};
