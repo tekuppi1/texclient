@@ -14,7 +14,7 @@ export default class ApiClass{
   constructor(path = null){
     console.log("ApiClass.constructor START");
     if(!path) console.log("apiパスが不足しています");
-    this.path = 'mock/' + path; //モックにpath通し
+    this.path = 'texserver/' + path; //モックにpath通し
   }
 
   /**
